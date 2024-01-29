@@ -1,0 +1,161 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="page-signup">
+    <div class="contianer-fluid">
+        <div class="container p-2">
+            <div class="header">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid ">
+                        <div class="d-flex justify-content-between w-100">
+                        <div>
+                        <a class="navbar-brand" href="#">
+                            <img src="~/Images/logo.png"    class="logo" alt="sf" />
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav  ms-auto gap-4">
+                                <li class="nav-item">
+                                    <a class="nav-link fw-medium" aria-current="page" href="#">FEATURES</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link btn border-0 dropdown-toggle fw-medium" data-bs-toggle="dropdown" aria-expanded="false">
+                                        INDUSTRIES
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link fw-medium" href="#">FAQ</a>
+                                </li> 
+                                <li class="nav-item">
+                                    <a class="nav-link fw-medium" href="#">CONTACT US</a>
+                                </li> 
+                                <li class="nav-item">
+                                    <button type="button" class="btn btn-primary rounded-pill px-4 fw-mediuml" href="#">LOGIN</button>
+                                </li>                               
+                            </ul>
+                        </div>
+                        </div>                       
+                    </div>
+                </nav>
+            </div>
+            <div class="row my-4">
+                <div class="card w-75 mx-auto  border-0">
+                    <div class="row">
+                         <div class="col-lg-5 col-md-5 col-sm-12 signinbg p-4  text-white">
+                            <iconify-icon icon="bxs:right-arrow" class="arrow"></iconify-icon>
+                            <h5 class="text-decoration-underline">SIGN IN</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control rounded-0" id="exampleInputPassword1">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input rounded-0" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                                </div>
+                               <div class="row  mt-4 mb-5">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <button type="submit" class="btn btn-outline-secondary w-100">Forgot Password</button>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <button type="submit" class="btn btn-danger w-100 d-flex align-items-center justify-content-center">
+                                            Sign In
+                                            <iconify-icon icon="ri:arrow-right-s-line"></iconify-icon>   
+                                        </button>
+                                    </div>
+                               </div>
+
+                            </form>
+                         </div>
+                        <div class="col-lg-7 col-md-7 col-sm-12 p-4 bg-light">
+                            <h5 class="text-danger">NEED AN ACCOUNT?</h5>
+                            <p class="fw-light ">
+                                Create an account to start managing<br />
+                                your company. Click the "Create New Account"<br />
+                                button below to get started
+                            </p>
+                            <button type="submit" class="btn text-white px-1 new" onclick="window.location.href='@Url.Action("Signup", "Account")'">Create New Account</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <ul class="nav d-flex justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link linkbody" aria-current="page" href="#">FEATURES</a>
+                    </li>
+                        <div class="vr"></div>
+                    <li class="nav-item">
+                        <a class="nav-link linkbody" href="#">FAQS</a>
+                    </li>
+                        <div class="vr"></div>
+                    <li class="nav-item">
+                        <a class="nav-link linkbody" href="#">CONTACT US</a>
+                    </li>
+                        <div class="vr"></div>
+                    <li class="nav-item">
+                        <a class="nav-link linkbody" href="#">LOGIN</a>
+                    </li>
+                        <div class="vr"></div>
+                    <li class="nav-item">
+                        <a class="nav-link linkbody" href="#">SIGN UP</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer signinbg">
+            <div class="container text-white py-5">
+                <div class="d-flex justify-content-between flex-column flex-sm-row">
+                    <div class="">
+                        <img src="~/Images/logo-footer.jpg" />
+                        <p class="fw-light mt-3 text-secondary">
+                            Copyright © FieldGroove, LLC 2024. All Rights Reserved.<br />
+                            716 Newman Springs Road, Suite 307 Lincroft, NJ 07738<br />
+                            <span class="text-danger">Privacy Policy</span>
+                        </p>
+                    </div>
+                    <div class="">
+                        <p class="fw-light mt-5 text-secondary">
+                            We would love to show you the power of FieldGroove. To setup<br/>
+                            a demo or get an account setup, please contact us at<br/>
+                            <a href="#" class="link-danger text-decoration-none">sales@fieldgroove.com</a> or by phone at <a href="#" class="link-danger text-decoration-none">212-537-0218</a
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>  
+     
+
+    </div>
+
+</body>
+</html>

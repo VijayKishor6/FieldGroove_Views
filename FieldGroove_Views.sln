@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldGroove_Views", "FieldGroove_Views.csproj", "{3EC5A1A5-B50F-4152-BADA-B90842DCCA56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EC5A1A5-B50F-4152-BADA-B90842DCCA56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC5A1A5-B50F-4152-BADA-B90842DCCA56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC5A1A5-B50F-4152-BADA-B90842DCCA56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC5A1A5-B50F-4152-BADA-B90842DCCA56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64883C64-01D1-4FE5-A3E0-8B3A000C886A}
+	EndGlobalSection
+EndGlobal

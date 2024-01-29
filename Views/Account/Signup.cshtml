@@ -1,0 +1,304 @@
+﻿@{
+Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+   <title>Document</title>
+</head>
+
+<body class="page-signup">
+   <div class="contianer-fluid">
+      <div class="container p-2">
+         <div class="header">
+            <nav class="navbar navbar-expand-lg navbar-light">
+               <div class="container-fluid ">
+                  <div class="d-flex justify-content-between w-100">
+                     <div>
+                        <a class="navbar-brand" href="#">
+                           <img src="~/Images/logo.png" class="logo" alt="sf" />
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                           data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                           aria-label="Toggle navigation">
+                           <span class="navbar-toggler-icon"></span>
+                        </button>
+                     </div>
+                     <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav  ms-auto gap-4">
+                           <li class="nav-item">
+                              <a class="nav-link fw-medium" aria-current="page" href="#">FEATURES</a>
+                           </li>
+                           <li class="nav-item dropdown">
+                              <a class="nav-link btn border-0 dropdown-toggle fw-medium" data-bs-toggle="dropdown"
+                                 aria-expanded="false">
+                                 INDUSTRIES
+                              </a>
+                              <ul class="dropdown-menu dropdown-menu-dark">
+                                 <li><a class="dropdown-item" href="#">Action</a></li>
+                                 <li><a class="dropdown-item" href="#">Another action</a></li>
+                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
+                              </ul>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link fw-medium" href="#">FAQ</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link fw-medium" href="#">CONTACT US</a>
+                           </li>
+                           <li class="nav-item">
+                              <button type="button" class="btn btn-primary rounded-pill px-4 fw-mediuml"
+                                 href="#">LOGIN</button>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+        <div class="row my-4">
+            <div class="card w-75 mx-auto  border-0">
+               <div class="row">
+                  <div id="account-info" class="col-lg-5 col-md-5 col-sm-12 signinbg p-4  text-white">
+                     <iconify-icon icon="bxs:right-arrow" class="arrow"></iconify-icon>
+                     <h5 class="text-decoration-underline">Account Info</h5>
+                     <form id="signup-form" onsubmit="return showRemainingContent()">
+                                <div class="mb-3">
+                                    <label class="form-label">First Name*</label>
+                                    <input type="text" class="form-control rounded-0" aria-describedby="First Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Last Name*</label>
+                                    <input type="text" class="form-control rounded-0" id="Last Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Company Name*</label>
+                                    <input type="text" class="form-control rounded-0" id="Company Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Phone*</label>
+                                    <input type="number" class="form-control rounded-0" id="Phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Email*</label>
+                                    <input type="email" class="form-control rounded-0" id="Email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password*</label>
+                                    <input type="password" class="form-control rounded-0" id="Password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password Again*</label>
+                                    <input type="password" class="form-control rounded-0" id="Password Again">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Time Zone*</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="inputGroupSelect02">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row  mt-4 mb-5">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 ms-auto">
+                                        <button type="submit" class="btn btn-danger w-100 align-item-end">Next</button>
+                                    </div>
+                                </div>
+
+                     </form>
+                  </div>
+                    <div id="remaining-content" style="display: none;" class="col-lg-5 col-md-5 col-sm-12 signinbg p-4  text-white">
+                            <iconify-icon icon="bxs:right-arrow" class="arrow"></iconify-icon>
+                            <h5 class="text-decoration-underline">Office Address</h5>
+                     <form>
+                        <div class="mb-3">
+                                    <label class="form-label">Street Address 1*</label>
+                                    <input type="text" class="form-control rounded-0" aria-describedby="Street Address 1">
+                        </div>
+                        <div class="mb-3">
+                                    <label class="form-label">Street Address 2</label>
+                                    <input type="text" class="form-control rounded-0" aria-describedby="Street Address 2">
+                        </div> 
+                        <div class="mb-3">
+                                    <label class="form-label">City*</label>
+                                    <input type="text" class="form-control rounded-0" aria-describedby="City">
+                        </div> 
+                        <div class="mb-3">
+                                    <label class="form-label">State*</label>
+                                    <input type="text" class="form-control rounded-0" aria-describedby="State">
+                        </div>
+                        <div class="mb-3">
+                                    <label class="form-label">Zip*</label>
+                                    <input type="number" class="form-control rounded-0" aria-describedby="Zip">
+                        </div>
+                        <div class="row  mt-4 mb-5">
+                         
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <button type="button" class="btn btn-outline-secondary w-100" onclick="showPreviousContent()">Back</button>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <button type="button" class="btn btn-danger w-100" onclick="submitForm()">Sign Up</button>
+                                        </div>
+                                    </div>
+                        
+                     </form>
+                  </div>
+                        <div class="col-lg-7 col-md-7 col-sm-12 p-4 bg-light">
+                            <h5 class="text-danger">SIGN UP NOW TO START YOUR FREE TRIAL</h5>
+                            <p class="fw-light ">
+                                FieldGroove empowers you to manage every aspect of your <br>
+                                contracting business anytime, anywhere, and from any <br />
+                                device. Enjoy a free trial where you can experience<br />
+                                everything FieldGroove has to offer, including:
+                            </p>
+                            <ul class="list">
+                                <li class="item">
+                                    Managing the entire job cycle from lead creation to post-job reporting
+                                </li>
+                                <li class="item">
+                                    Monitoring pipeline and backlog numbers, in real time
+                                </li>
+                                <li class="item">
+                                    Building estimates for your prospects to review and accept via email or on the job site
+                                </li>
+                                <li class="item">
+                                    Keeping close track of your team, equipment, inventory, and jobs
+                                </li>
+                                <li class="item">
+                                    Automating scheduling and dispatching
+                                </li>
+                                <li class="item">
+                                    Preparing work orders and load tickets with one click
+                                </li>
+                            </ul>
+                        </div>
+               </div>
+            </div>
+                <div class="frequently-asked-questions">
+                    <h2>Frequently Asked Questions</h2>
+                    <ul class="list">
+                        <li class="item">
+                            <label for="">Will my card on file be charged?</label>
+                            <p>
+                                We don’t charge anything at all before or during the trial period. The card on file is simply so we know you’re a person, not a robot.
+                            </p>
+                        </li>
+                        <li class="item">
+                            <label for="">Can I cancel my free trial at any time?</label>
+                            <p>
+                                Absolutely. All we ask is that you give FieldGroove a fair shot, because it is rare that we can’t improve your business!
+                            </p>
+                        </li>
+                        <li class="item">
+                            <label for="">How long is my free trial? </label>
+                            <p>The free trial is for 7 days.</p>
+                        </li>
+                        <li class="item">
+                            <label for="">Can I change or cancel my plan later on?</label>
+                            <p>
+                                We have several resources (documents and videos) for training.  The portal has a button you can click to send instant questions, and you will be assigned a personal point of contact who will be available to assist as needed.
+                            </p>
+                        </li>
+                        <li class="item">
+                            <label for="">Do you have customer representatives to answer questions during my trial?</label>
+                            <p>We have several resources (documents and videos) for training.  The portal has a button you can click to send instant questions, and you will be assigned a personal point of contact who will be available to assist as needed.</p>
+                        </li>
+                        <li class="item">
+                            <label for="">What happens after my trial ends?</label>
+                            <p>
+                                Typically, you’ll find that you can’t live without us!  Before the end of the trial, we will be providing you with a quote for continuing the subscription.  We will also be working closely with you toward a seamless transition.  After the initial 7 days trial, with your acceptance of our quote and your approval, we will start charging for the monthly subscription.  We will provide you with all the tools necessary for on-boarding as well.
+                            </p>
+                        </li>
+                    </ul>
+                </div>  
+         </div>
+         <div class="row">
+            <ul class="nav d-flex justify-content-center">
+               <li class="nav-item">
+                  <a class="nav-link linkbody" aria-current="page" href="#">FEATURES</a>
+               </li>
+               <div class="vr"></div>
+               <li class="nav-item">
+                  <a class="nav-link linkbody" href="#">FAQS</a>
+               </li>
+               <div class="vr"></div>
+               <li class="nav-item">
+                  <a class="nav-link linkbody" href="#">CONTACT US</a>
+               </li>
+               <div class="vr"></div>
+               <li class="nav-item">
+                  <a class="nav-link linkbody" href="#">LOGIN</a>
+               </li>
+               <div class="vr"></div>
+               <li class="nav-item">
+                  <a class="nav-link linkbody" href="#">SIGN UP</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="footer signinbg">
+         <div class="container text-white py-5">
+            <div class="d-flex justify-content-between flex-column flex-sm-row">
+               <div class="">
+                  <img src="~/Images/logo-footer.jpg" />
+                  <p class="fw-light mt-3 text-secondary">
+                     Copyright © FieldGroove, LLC 2024. All Rights Reserved.<br />
+                     716 Newman Springs Road, Suite 307 Lincroft, NJ 07738<br />
+                     <span class="text-danger">Privacy Policy</span>
+                  </p>
+               </div>
+               <div class="">
+                  <p class="fw-light mt-5 text-secondary">
+                     We would love to show you the power of FieldGroove. To setup<br />
+                     a demo or get an account setup, please contact us at<br />
+                     <a href="#" class="link-danger text-decoration-none">sales@fieldgroove.com</a> or by phone at <a
+                        href="#" class="link-danger text-decoration-none">212-537-0218</a> </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+    <script>
+        function showNextContent() {
+            // You can add logic here to handle any actions before showing the next content
+            document.getElementById('account-info').style.display = 'none';
+            document.getElementById('remaining-content').style.display = 'block';
+        }
+
+        function showRemainingContent() {
+            // You can add validation or other logic here before showing the remaining content
+            showNextContent();
+            // Return false to prevent form submission (as we're handling it manually)
+            return false;
+        }
+
+        function showPreviousContent() {
+            // Logic to show the "Account Info" section when the "Back" button is clicked
+            document.getElementById('account-info').style.display = 'block';
+            document.getElementById('remaining-content').style.display = 'none';
+        }
+    </script>
+
+
+</body>
+
+</html>
