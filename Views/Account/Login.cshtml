@@ -193,6 +193,7 @@
             })
             .then(data => {
                 console.log('Token:', data);
+                window.location.href = '@Url.Action("Index", "Home")';
             })
             .catch(error => {   
                 console.error('Error:', error);
