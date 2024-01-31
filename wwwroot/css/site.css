@@ -215,3 +215,21 @@ body {
 @media screen and (max-width: ){
 
 }
+
+.bg-color {
+    background-color: #eeeeee;
+}
+
+.badge {
+    background-color: #dddddd;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+    color: #007bff; /* You can adjust the text color */
+}
+
+    .btn-transparent:hover {
+        background-color: rgba(0, 123, 255, 0.1); /* Add a subtle hover effect if desired */
+    }  

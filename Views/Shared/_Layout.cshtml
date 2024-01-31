@@ -7,43 +7,157 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FieldGroove_Views.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FieldGroove_Views</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-1 p-0 bg-light d-lg-block d-none">
+                <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
+                            <small>FIELD GROOVC</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link py-2 rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
+                            <i class="bi bi-check2-square" style="font-size: 2.5rem; color:dimgray"></i><br />
+                            <label style="color:dimgray">Tasks</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link py-2 rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Orders">
+                            <i class="bi bi-calendar3" style="font-size: 2.5rem; color:dimgray"></i><br />
+                            <label style="color:dimgray">Calandar</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link py-2 rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
+                            <i class="bi bi-graph-up" style="font-size: 2.5rem; color:dimgray"></i><br />
+                            <label style="color:dimgray">Reports</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link py-2 rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Customers" data-bs-original-title="Customers">
+                            <i class="bi bi-people" style="font-size: 2.5rem; color:dimgray"></i><br />
+                            <label style="color:dimgray">Users</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link py-2  rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Customers" data-bs-original-title="Customers">
+                            <i class="bi bi-gear-fill" style="font-size: 2.5rem; color:dimgray"></i><br />
+                            <label style="color:dimgray">Settings</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link py-2 rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Customers" data-bs-original-title="Customers">
+                            <i class="bi bi-question-circle" style="font-size: 2.5rem; color:dimgray"></i><br />
+                            <label style="color:dimgray">Support</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link py-2 rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Customers" data-bs-original-title="Customers">
+                            <i class="bi bi-speedometer2" style="font-size: 2.5rem; color:dimgray"></i><br />
+                            <label style="color:dimgray">Super Admin</label>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+            <div class="col-lg-11 col-12 p-0">
+                <nav class="navbar navbar-expand-lg bg-primary text-white">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-white" aria-current="page" href="#">Leads</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active text-white" aria-current="page" href="#">Opportunities</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active text-white" aria-current="page" href="#">Jobs</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Accounting
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Coustmers
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Inventory
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Dispatcher
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="d-flex align-items-center ">
+                                <form class="d-flex align-items-center gap-2" role="search">
+                                    <div class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white  d-flex flex-row-reverse align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            ABINGTON
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <iconify-icon icon="mdi:bell-outline" style="font-size: 2rem;"></iconify-icon>
+                                        <iconify-icon icon="carbon:user-avatar" style="font-size: 2rem;"></iconify-icon>
+                                        <h6 class="text-nowrap mb-0">Vijay Kishor</h6>
+                                    </div>
+                                </form>
+                            </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - FieldGroove_Views - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </div>
+                    </div>
+                </nav>
+                @RenderBody()
+            </div>
+
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    </div>
 </body>
+
+
 </html>
