@@ -185,7 +185,6 @@
             })
             .then(response => {
                 console.log('Response:', response); 
-                console.log('logged in....')
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -193,7 +192,10 @@
             })
             .then(data => {
                 console.log('Token:', data);
+                console.log('logged in....')
+
                 window.location.href = '@Url.Action("Index", "Home")';
+
             })
             .catch(error => {   
                 console.error('Error:', error);
