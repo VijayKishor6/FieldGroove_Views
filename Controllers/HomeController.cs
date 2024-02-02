@@ -10,7 +10,11 @@ namespace FieldGroove_Views.Controllers
         }
 
         public IActionResult Opportunity()
+        {
+            return View();
+        }
 
+        public IActionResult Dashboard()
         {
             return View();
         }
