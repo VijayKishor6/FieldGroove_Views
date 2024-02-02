@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Estimate.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="~/lib/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="~/lib/leaflet/leaflet.min.css" asp-append-version="true" />
+
+  
+
+    <style>
+        </head >
+        <style >
+        .form-select {
+            height: 33px;
+            font-size: 13px;
+        }
+
+        .border-card{
+            border:1px solid whitesmoke;
+        }
+        .border-card-2{
+            background-color: #adb5bd;
+        }
+
+        .nav-link{
+
+            border-radius:none !important;
+        }
+
+        .nav-items-2:hover{
+            background-color: #adb5bd;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size:12px;
+        }
+        .font-size-span{
+            font-size: 12px;
+        }
+
+        th, td {
+            border: 1px solid grey;
+            text-align: left;
+        }
+
+    </style>
+
+
+    <body>
+        <div>
+            <nav class="navbar navbar-expand-lg bg-light header-content " style="border-bottom: #808080 1px solid;">
+                <div class="container-fluid ">
+                    <div>
+                        <a class="navbar-brand text-dark" href="#">Test</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item dropdown ">
+                                <button type="button" class="btn btn-primary">Close</button>
+                                <button type="button" class="btn btn-success">Duplicate</button>
+                                <button type="button" class="btn btn-danger">Archive</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="d-flex px-3 p-2">
+                <span>Opportunity</span>
+                <span class="mx-2">></span>
+                <span>Jobs</span>
+                <span class="mx-2">></span>
+                <span>Test</span>
+               
+            </div>
+            <hr class="header-content mt-0" style="border-bottom: #808080 1px solid;" />
+            <div class="row mx-2">
+                <div class="col-3 bg-primary-subtle border-card">
+                    <div class="d-flex flex-column">
+                        <span>Estimate Approved</span>
+                        <span>₹0.00</span>
+                    </div>
+                </div>  
+                <div class="col-2   border-card  border-card-2">
+                    <div class="d-flex flex-column">
+                        <span>Approved</span>
+                        <span>₹0.00</span>
+                    </div>
+                </div>  
+                <div class="col-3   border-card border-card-2">
+                    <div class="d-flex flex-column">
+                        <span>Approved Left</span>
+                        <span>₹0.00</span>
+                    </div>
+                </div> 
+                <div class="col-4  border-card border-card-2">
+                    <div class="d-flex flex-column">
+                        <span>Invoice</span>
+                        <span>0 Open Invoice</span>
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class="row p-0 m-3 card">
+                <div class="col-12 p-0 m-0 ">
+                  
+
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Overview</button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Document</button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Photos</button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Time log</button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Downloads</button>                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Photos</button>
+                        </div>
+                    </nav>
+                    <div class="tab-content mx-3" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                            <div class="row">
+                              <div class="col-4">
+                                    <table class="m-2 ">
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                       Name
+                                                    </div>
+                                                   
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                       Test Project
+                                                       
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                     
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Type
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                       
+
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Sales Person
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Depiga Madhan
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Estimate
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-gear-fill"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Project Manager
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <a href="#">
+                                                       Test company
+
+                                                    </a>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                          </tr>  
+
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Contact
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                       
+
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-gear-fill"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Sape division
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                       
+
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-gear-fill"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Plan
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                       
+
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-gear-fill"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Address
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                       
+
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Work Orders
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                       None Yet
+
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </table>
+                              </div>
+                                <div class="col-4 bg-light">
+
+                                </div>
+                                <div class="col-4">
+                                    <div class="m-2 ">
+                                        <div>
+                                            <div class="px-3 font-size-span">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-column">
+                                                        <span> Assigned office location</span>
+                                                        <span>NewYork</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="m-0" />
+                                            
+                                        </div>
+                                        <div>
+                                            <div class="px-3 font-size-span">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-column">
+                                                        <span> Summary Private Note</span>
+                                                        <span>NewYork</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="m-0" />
+
+                                        </div>
+                                          <div>
+                                            <div class="px-3 font-size-span">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-column">
+                                                        <span> Work OrderNote</span>
+                                                        <span>NewYork</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="m-0" />
+                                            
+                                        </div>
+                                          <div>
+                                            <div class="px-3 font-size-span">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-column">
+                                                        <span> onfidence Level</span>
+                                                        <span>NewYork</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="m-0" />
+                                            
+                                        </div>
+                                          <div>
+                                            <div class="px-3 font-size-span">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-column">
+                                                        <span> Action Needed</span>
+                                                        <span>NewYork</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="m-0" />
+                                            
+                                        </div>
+                                          <div>
+                                            <div class="px-3 font-size-span">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-column">
+                                                        <span>Open Task </span>
+                                                        <span>NewYork</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="m-0" />
+                                            
+                                        </div>
+                                          <div>
+                                            <div class="px-3 font-size-span">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-column">
+                                                        <span> Assigned office location</span>
+                                                        <span>NewYork</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="m-0" />
+                                            
+                                        </div>
+                                        <div>
+                                            <div class="px-3 font-size-span">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-column">
+                                                        <span> Assigned office location</span>
+                                                        <span>NewYork</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="m-0" />
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
+                        <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+
+</html>
