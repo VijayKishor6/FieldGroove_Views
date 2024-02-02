@@ -8,7 +8,9 @@ namespace FieldGroove_Views.Controllers
         {
             return View();
         }
-        public IActionResult Dashboard()
+
+        public IActionResult Opportunity()
+
         {
             return View();
         }
