@@ -81,24 +81,36 @@
                     </div>
                 </div>
             </div>
-              <div class="mt-3 p-3 table-responsive">
-                <table id="leadTable" class="table table-striped" style="width:100%">
+              <div class="mt-3 p-3 ">
+                  @* table *@
+                <table id="leadsTable" class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Project Name</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Added</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Contact</th>
-                            <th scope="col">Action</th>
-                            <th scope="col">Assignee</th>
-                            <th scope="col">Bid Date</th>
-                            <th scope="col">Operation</th>
-
+                            <th>Name</th>
+                            <th>Project Name</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody">
+                    <tbody>
+                        <!-- Sample data, replace with your actual data from the server -->
+                        <tr>
+                            <td>Lead 1</td>
+                            <td>Project A</td>
+                            <td>Active</td>
+                            <td>
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editLeadModal">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Lead 2</td>
+                            <td>Project B</td>
+                            <td>Inactive</td>
+                            <td>
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editLeadModal">Edit</button>
+                            </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
                     </tbody>
                 </table>
             </div>
@@ -183,3 +195,14 @@
         <div id="toast-container" class="toast-container"></div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        // Initialize DataTable
+        $('#leadsTable').DataTable();
+
+        // Add DataTables search functionality to the search input
+        $('input[type="search"]').on('keyup', function () {
+            $('#leadsTable').DataTable().search($(this).val()).draw();
+        });
+    });
+</script>
