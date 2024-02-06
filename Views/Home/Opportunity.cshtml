@@ -1,0 +1,250 @@
+﻿@{
+	ViewData["Title"] = "Leads";
+}
+<head>
+	<link rel="stylesheet" href="~/css/Opportunity.css" asp-append-version="true" />
+</head>
+<div class="row p-0 m-0 ">
+	<div class="col-lg-8 col-12 p-0 m-0">
+		<div class="d-flex flex-lg-row flex-column justify-content-between  bg-color border border-start-0 border-top-0 p-4">
+			<div>
+				<h3>
+					Opportunity
+				</h3>
+			</div>
+			<div>
+				<button type="button" class="btn btn-warning">View Archieved</button>
+				<button type="button" class="btn btn-success mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addOpportunityModal">Start Ner Opportunity</button>
+			</div>
+		</div>
+		<div class="row p-3 m-0  border border-start-0 border-top-0">
+			<div class="col-lg-3 col-12">
+				<div class="border gap-2  bg-color p-3">
+					<input class="form-control mb-3  bg-color" type="search" placeholder="Search" aria-label="Search">
+					<select class="form-select mb-3" aria-label="Default select example">
+						<option selected>Open this select menu</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+					</select>
+					<select class="form-select mb-3" aria-label="Default select example">
+						<option selected>Open this select menu</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+					</select>
+					<select class="form-select mb-3" aria-label="Default select example">
+						<option selected>Open this select menu</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+					</select>
+					<select class="form-select mb-3" aria-label="Default select example">
+						<option selected>Open this select menu</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+					</select>
+					<div class="form-check mb-3">
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+						<label class="form-check-label" for="flexCheckDefault">
+							Expired
+						</label>
+					</div>
+					<div class="d-flex justify-content-evenly p-0 m-0">
+						<button type="button" class="btn btn-secondary text-black badge border-0 px-3"><span class="text-black"><iconify-icon icon="ph:download-fill"></iconify-icon></span>&nbsp;Export</button>
+						<button type="button" class="btn btn-primary    px-3">Filter</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-8 d-lg-block d-none border p-0 m-0">
+			</div>
+
+			<div class="pe-0 mt-3 m-0">
+				<div class="d-flex text-center border ps-3">
+					<div class="col-4  border d-flex align-items-center justify-content-center bg-color p-2">
+						<p class="mb-0 text-secondary"><span class="badge text-white">0</span>&nbsp;Open</p>
+					</div>
+					<div class="col-4  border d-flex align-items-center justify-content-center bg-color p-2">
+						<p class="mb-0 text-secondary"><span class="badge text-white">0</span>&nbsp;Pending</p>
+					</div>
+					<div class="col-4 border d-flex align-items-center justify-content-center bg-color p-2">
+						<p class="mb-0 text-secondary"><span class="badge text-white">0</span>&nbsp;Project Templates</p>
+					</div>
+				</div>
+			</div>
+			<div class="mt-3 p-3 table-responsive">
+				<table id="leadTable" class="table table-striped" style="width:100%">
+					<thead class="table-light">
+						<tr>
+							<th scope="col">Customer</th>
+							<th scope="col">Created</th>
+							<th scope="col">Modified</th>
+							<th scope="col">Status</th>
+							<th scope="col">Name/Number</th>
+							<th scope="col">Address</th>
+							<th scope="col">Salesperson</th>
+							<th scope="col">Action</th>
+							<th scope="col">Due Date</th>
+							<th scope="col"></th>
+
+						</tr>
+					</thead>
+					<tbody id="tableBody">
+					</tbody>
+				</table>
+			</div>
+			<!-- Modal -->
+            <div class="modal fade  " id="addOpportunityModal" tabindex="-1" aria-labelledby="addLeadModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable ">
+                    <div class="modal-content  opportunity_model h-75 w-75">
+                        <div class="modal-header">
+                            <p class="modal-title" id="addLeadModalLabel">Start New Opportunity</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="opportunityForm">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>Customer:</td>
+                                            <td>
+                                                <select class="form-select" id="customerDropdown" name="Customer">
+                                                    <!-- Populate the dropdown with customer options -->
+                                                    <option value="customer1">Customer 1</option>
+                                                    <option value="customer2">Customer 2</option>
+                                                    <!-- Add more options as needed -->
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center" colspan="2"><strong>New Customer Details</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center" colspan="2"> <input type="checkbox" id="businessAccount" name="BusinessAccount"> Business Account</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Company Name:</td>
+                                            <td><input type="text" class="form-control" id="companyName" name="CompanyName" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td>First Name:</td>
+                                            <td><input type="text" class="form-control" id="firstName" name="FirstName" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Last Name:</td>
+                                            <td><input type="text" class="form-control" id="lastName" name="LastName" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone:</td>
+                                            <td><input type="text" class="form-control" id="phone" name="Phone" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email:</td>
+                                            <td><input type="email" class="form-control" id="email" name="Email" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Type:</td>
+                                            <td><input type="text" class="form-control" id="type" name="Type"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Source:</td>
+                                            <td><input type="text" class="form-control" id="source" name="Source"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location:</td>
+                                            <td><input type="text" class="form-control" id="location" name="Location"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center" colspan="2"><strong>Opportunity Information</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Name/Number:</td>
+                                            <td><input type="text" class="form-control" id="opportunityName" name="OpportunityName"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plan Name:</td>
+                                            <td><input type="text" class="form-control" id="planName" name="PlanName"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Subdivision:</td>
+                                            <td><input type="text" class="form-control" id="subdivision" name="Subdivision"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address:</td>
+                                            <td><input type="text" class="form-control" id="address" name="Address"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>County:</td>
+                                            <td><input type="text" class="form-control" id="county" name="County"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Salesperson:</td>
+                                            <td>
+                                                <select class="form-select" id="salespersonDropdown" name="Salesperson">
+                                                    <!-- Populate the dropdown with salesperson options -->
+                                                    <option value="salesperson1">Salesperson 1</option>
+                                                    <option value="salesperson2">Salesperson 2</option>
+                                                    <!-- Add more options as needed -->
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Type:</td>
+                                            <td><input type="text" class="form-control" id="opportunityType" name="OpportunityType"></td>
+                                        </tr>
+                                            
+                                        <tr>
+                                            <td>Private Notes:</td>
+                                            <td><textarea class="form-control" id="privateNotes" name="PrivateNotes" rows="3"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Options:</td>
+                                            <td>
+                                                <p>job is within the city Limits?</p>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="withinCityLimit" id="withinCityYes" value="yes">
+                                                    <label class="form-check-label" for="withinCityYes">Yes</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="withinCityLimit" id="withinCityNo" value="no">
+                                                    <label class="form-check-label" for="withinCityNo">No</label>
+                                                </div>
+
+                                                <p>is this job is permitted?</p>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="jobPermitted" id="jobPermittedYes" value="yes">
+                                                    <label class="form-check-label" for="jobPermittedYes">Yes</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="jobPermitted" id="jobPermittedNo" value="no">
+                                                    <label class="form-check-label" for="jobPermittedNo">No</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="saveOpportunity()">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+		</div>
+
+
+
+	</div>
+
+	<div class="col-4">
+		<div id="toast-container" class="toast-container"></div>
+	</div>
+</div>
