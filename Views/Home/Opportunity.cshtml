@@ -14,7 +14,7 @@
 			</div>
 			<div>
 				<button type="button" class="btn btn-warning">View Archieved</button>
-				<button type="button" class="btn btn-success mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addOpportunityModal">Start Ner Opportunity</button>
+				<button type="button" class="btn btn-success mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addOpportunityModal">Start New Opportunity</button>
 			</div>
 		</div>
 		<div class="row p-3 m-0  border border-start-0 border-top-0">
@@ -74,25 +74,25 @@
 				</div>
 			</div>
 			<div class="mt-3 p-3 table-responsive">
-				<table id="leadTable" class="table table-striped" style="width:100%">
-					<thead class="table-light">
-						<tr>
-							<th scope="col">Customer</th>
-							<th scope="col">Created</th>
-							<th scope="col">Modified</th>
-							<th scope="col">Status</th>
-							<th scope="col">Name/Number</th>
-							<th scope="col">Address</th>
-							<th scope="col">Salesperson</th>
-							<th scope="col">Action</th>
-							<th scope="col">Due Date</th>
-							<th scope="col"></th>
-
-						</tr>
-					</thead>
-					<tbody id="tableBody">
-					</tbody>
-				</table>
+                <table id="opportunityTable" class="table table-striped" style="width:100%">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Created</th>
+                            <th scope="col">Modified</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Name/Number</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Salesperson</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Due Date</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Table body content will be dynamically populated by the script -->
+                    </tbody>
+                </table>
 			</div>
 			<!-- Modal -->
             <div class="modal fade  " id="addOpportunityModal" tabindex="-1" aria-labelledby="addLeadModalLabel" aria-hidden="true">
@@ -110,10 +110,7 @@
                                             <td>Customer:</td>
                                             <td>
                                                 <select class="form-select" id="customerDropdown" name="Customer">
-                                                    <!-- Populate the dropdown with customer options -->
-                                                    <option value="customer1">Customer 1</option>
-                                                    <option value="customer2">Customer 2</option>
-                                                    <!-- Add more options as needed -->
+                                                  
                                                 </select>
                                             </td>
                                         </tr>
@@ -126,15 +123,15 @@
                                         </tr>
                                         <tr>
                                             <td>Company Name:</td>
-                                            <td><input type="text" class="form-control" id="companyName" name="CompanyName" required></td>
+                                            <td><input type="text" class="form-control" id="CompanyName" name="CompanyName" required></td>
                                         </tr>
                                         <tr>
                                             <td>First Name:</td>
-                                            <td><input type="text" class="form-control" id="firstName" name="FirstName" required></td>
+                                            <td><input type="text" class="form-control" id="FirstName" name="FirstName" required></td>
                                         </tr>
                                         <tr>
                                             <td>Last Name:</td>
-                                            <td><input type="text" class="form-control" id="lastName" name="LastName" required></td>
+                                            <td><input type="text" class="form-control" id="LastName" name="LastName" required></td>
                                         </tr>
                                         <tr>
                                             <td>Phone:</td>
@@ -183,10 +180,7 @@
                                             <td>Salesperson:</td>
                                             <td>
                                                 <select class="form-select" id="salespersonDropdown" name="Salesperson">
-                                                    <!-- Populate the dropdown with salesperson options -->
-                                                    <option value="salesperson1">Salesperson 1</option>
-                                                    <option value="salesperson2">Salesperson 2</option>
-                                                    <!-- Add more options as needed -->
+                                                  
                                                 </select>
                                             </td>
                                         </tr>
@@ -230,7 +224,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" onclick="saveOpportunity()">Save changes</button>
+                            <button id="saveButton" type="button" class="btn btn-primary" onclick="saveOpportunity()">Save changes</button>
                         </div>
                     </div>
                 </div>
@@ -248,3 +242,131 @@
 		<div id="toast-container" class="toast-container"></div>
 	</div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#saveButton').on('click', function () {
+           
+           
+
+
+            const formData = {
+                CompanyName: $('#CompanyName').val(),
+                FirstName: $('#FirstName').val(),
+                LastName: $('#LastName').val(),
+                ProjectName: $('#ProjectName').val(),
+              //  CustomerName: $('#customerDropdown').val(),
+                // ... add other properties as needed
+                UserId: 1,
+                CustomerId: 1
+
+                
+            };
+
+            // API endpoint URL
+            const apiUrl = 'https://localhost:44367/api/Opportunities';
+
+            // Ajax request to the API
+            $.ajax({
+                url: apiUrl,
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function (data) {
+                    console.log('Opportunity created successfully:', data);
+                    window.location.href = '@Url.Action("Opportunity", "Home")';
+
+                    // Add any further handling here
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.error('Error creating opportunity:', errorThrown);
+                    xhr.text().then(errorMessage => {
+                        console.log('Error message:', errorMessage);
+                    });
+                }
+            });
+        });
+    });
+
+    $(document).ready(function () {
+        // Function to retrieve and display opportunities
+        function getOpportunities() {
+            const apiUrl = 'https://localhost:44367/api/Opportunities';
+
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                success: function (data) {
+                    $.each(data, function (index, opportunity) {
+                        console.log(data);
+                        // Assuming the opportunity object has properties like Customer, Created, Modified, etc.
+                        const row = `<tr>
+                                <td>${opportunity.CompanyName}</td>
+                                <td>${opportunity.CreatedBy}</td>
+                                <td>${opportunity.ModifiedBy}</td>
+                                <td>${opportunity.Status}</td>
+                                <td>${opportunity.Name}</td>
+                                <td>${opportunity.Address1}</td>
+                            <td>${opportunity.Salesperson}</td>
+                            <td>${opportunity.Action}</td>
+                            <td>${opportunity.DueDate}</td>
+                           
+                        </tr>`;
+
+                        // Append the row to the table body
+                        $('#tableBody').append(row);
+                    });
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.error('Error fetching opportunities:', errorThrown);
+                    xhr.text().then(errorMessage => {
+                        console.log('Error message:', errorMessage);
+                    });
+                }
+            });
+        }
+
+        // Call getOpportunities function on page load
+        getOpportunities();
+    });
+
+    $(document).ready(function () {
+        // Function to retrieve and display opportunities
+        function getOpportunities() {
+            const apiUrl = 'https://localhost:44367/api/Customers';
+
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                success: function (data) {
+                    console.log(data);
+                    $.each(data, function (index, opportunity) {
+                        
+                        // Assuming the opportunity object has properties like Customer, Created, Modified, etc.
+                        const CustomerName = `<option value="${opportunity.CustomerName}">${opportunity.CompanyName}</option>`;
+
+                        // Append the row to the table body
+                        $('#customerDropdown').append(CustomerName);
+
+                        const SalesPersonName = `<option value="salesperson1">${opportunity.Salesman}</option>`;
+
+                        // Append the row to the table body
+                        $('#salespersonDropdown').append(SalesPersonName);
+                    });
+
+                    
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.error('Error fetching opportunities:', errorThrown);
+                    xhr.text().then(errorMessage => {
+                        console.log('Error message:', errorMessage);
+                    });
+                }
+            });
+        }
+
+        // Call getOpportunities function on page load
+        getOpportunities();
+    });
+
+</script>
