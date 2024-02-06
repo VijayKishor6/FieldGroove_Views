@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="~/lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="~/lib/leaflet/leaflet.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <style>
         </head >
@@ -22,28 +26,29 @@
             font-size: 13px;
         }
 
-        .border-card{
-            border:1px solid whitesmoke;
+        .border-card {
+            border: 1px solid whitesmoke;
         }
-        .border-card-2{
+
+        .border-card-2 {
             background-color: #adb5bd;
         }
 
-        .nav-link{
-
-            border-radius:none !important;
+        .nav-link {
+            border-radius: none !important;
         }
 
-        .nav-items-2:hover{
+        .nav-items-2:hover {
             background-color: #adb5bd;
         }
 
         table {
             border-collapse: collapse;
             width: 100%;
-            font-size:12px;
+            font-size: 12px;
         }
-        .font-size-span{
+
+        .font-size-span {
             font-size: 12px;
         }
 
@@ -84,7 +89,7 @@
                 <span>Jobs</span>
                 <span class="mx-2">></span>
                 <span>Test</span>
-               
+
             </div>
             <hr class="header-content mt-0" style="border-bottom: #808080 1px solid;" />
             <div class="row mx-2">
@@ -93,31 +98,31 @@
                         <span>Estimate Approved</span>
                         <span>₹0.00</span>
                     </div>
-                </div>  
+                </div>
                 <div class="col-2   border-card  border-card-2">
                     <div class="d-flex flex-column">
                         <span>Approved</span>
                         <span>₹0.00</span>
                     </div>
-                </div>  
+                </div>
                 <div class="col-3   border-card border-card-2">
                     <div class="d-flex flex-column">
                         <span>Approved Left</span>
                         <span>₹0.00</span>
                     </div>
-                </div> 
+                </div>
                 <div class="col-4  border-card border-card-2">
                     <div class="d-flex flex-column">
                         <span>Invoice</span>
                         <span>0 Open Invoice</span>
                     </div>
                 </div>
-               
+
             </div>
 
             <div class="row p-0 m-3 card">
                 <div class="col-12 p-0 m-0 ">
-                  
+
 
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -131,22 +136,20 @@
                     <div class="tab-content mx-3" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
                             <div class="row">
-                              <div class="col-4">
-                                    <table class="m-2 ">
-                                        <tr>
+                                <div class="col-4">
+                                    <table class="m-2" style="height:300px">
+                                        <tr id="">
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                       Name
+                                                        Name
                                                     </div>
-                                                   
+
                                                 </div>
                                             </td>
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
-                                                    <div>
-                                                       Test Project
-                                                       
+                                                    <div id="name">
                                                     </div>
                                                     <div>
                                                         <i class="bi bi-pencil-square"></i>
@@ -154,7 +157,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                     
+
                                         <tr>
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
@@ -167,8 +170,6 @@
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                       
-
                                                     </div>
                                                     <div>
                                                         <i class="bi bi-pencil-square"></i>
@@ -188,8 +189,7 @@
                                             </td>
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
-                                                    <div>
-                                                        Depiga Madhan
+                                                    <div id="salesPerson">
                                                     </div>
                                                     <div>
                                                         <i class="bi bi-pencil-square"></i>
@@ -217,7 +217,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
@@ -230,7 +230,7 @@
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
                                                     <a href="#">
-                                                       Test company
+                                                        Test company
 
                                                     </a>
                                                     <div>
@@ -238,7 +238,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                          </tr>  
+                                        </tr>
 
                                         <tr>
                                             <td class="px-3">
@@ -252,8 +252,6 @@
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                       
-
                                                     </div>
                                                     <div>
                                                         <i class="bi bi-gear-fill"></i>
@@ -261,7 +259,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
@@ -274,8 +272,6 @@
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                       
-
                                                     </div>
                                                     <div>
                                                         <i class="bi bi-gear-fill"></i>
@@ -283,7 +279,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
@@ -296,8 +292,6 @@
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                       
-
                                                     </div>
                                                     <div>
                                                         <i class="bi bi-gear-fill"></i>
@@ -305,7 +299,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
@@ -318,8 +312,6 @@
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                       
-
                                                     </div>
                                                     <div>
                                                         <i class="bi bi-pencil-square"></i>
@@ -327,7 +319,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
@@ -340,7 +332,7 @@
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                       None Yet
+                                                        None Yet
 
                                                     </div>
                                                     <div>
@@ -349,11 +341,10 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        
-                                    </table>
-                              </div>
-                                <div class="col-4 bg-light">
 
+                                    </table>
+                                </div>
+                                <div class="col-4 bg-light">
                                 </div>
                                 <div class="col-4">
                                     <div class="m-2 ">
@@ -370,7 +361,7 @@
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
-                                            
+
                                         </div>
                                         <div>
                                             <div class="px-3 font-size-span">
@@ -387,7 +378,7 @@
                                             <hr class="m-0" />
 
                                         </div>
-                                          <div>
+                                        <div>
                                             <div class="px-3 font-size-span">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-column">
@@ -400,9 +391,9 @@
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
-                                            
+
                                         </div>
-                                          <div>
+                                        <div>
                                             <div class="px-3 font-size-span">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-column">
@@ -415,9 +406,9 @@
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
-                                            
+
                                         </div>
-                                          <div>
+                                        <div>
                                             <div class="px-3 font-size-span">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-column">
@@ -430,9 +421,9 @@
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
-                                            
+
                                         </div>
-                                          <div>
+                                        <div>
                                             <div class="px-3 font-size-span">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-column">
@@ -445,9 +436,9 @@
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
-                                            
+
                                         </div>
-                                          <div>
+                                        <div>
                                             <div class="px-3 font-size-span">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-column">
@@ -460,7 +451,7 @@
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
-                                            
+
                                         </div>
                                         <div>
                                             <div class="px-3 font-size-span">
@@ -489,8 +480,240 @@
                 </div>
 
             </div>
+            <div class="row p-0 m-3 ">
+                <div class="col-12 p-0 m-0 ">
+                    <div class="bg-light d-flex justify-content-between p-3">
+                        <div class="">
+                            <span class="" style="font-size:17px">Estimate</span>
+                        </div>
+                        <div>
+                            <button class="btn btn-success" id="estimateButton">Estimate</button>
+                        </div>
+                        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Your Modal Title</h5>
+
+                                    </div>
+                                    <div class="modal-body ">
+                                        <form id="postDataForm">
+                                            <div class="d-flex flex-column " style="width:350px">
+                                            <label for="userId">UserId:</label>
+                                            <input type="number" id="userId" name="UserId" value="42" required>
+
+                                            <label for="leadsId">LeadsId:</label>
+                                            <input type="number" id="leadsId" name="LeadsId" value="25" required>
+
+                                            <label for="name">Name:</label>
+                                            <input type="text" id="name" name="Name" value="value002" required>
+
+                                            <label for="lineItemIds">LineItemIds:</label>
+                                            <input type="text" id="lineItemIds" name="LineItemIds" value="value" required>
+
+                                           <div class="d-flex ">
+                                                    <label for="customerAccepted">CustomerAccepted:</label>
+                                                    <input type="checkbox" id="customerAccepted" name="CustomerAccepted" class="mx-3" >
+
+                                           </div>
+                                            <label for="notes">Notes:</label>
+                                            <input type="text" id="notes" name="Notes" value="value" required>
+
+                                            <label for="locationId">LocationId:</label>
+                                            <input type="text" id="locationId" name="LocationId" value="value" required>
+
+                                            <label for="type">Type:</label>
+                                            <input type="text" id="type" name="Type" value="value" required>
+
+                                            <label for="number">Number:</label>
+                                            <input type="number" id="number" name="number" value="25" required>
+
+                                            <label for="status">Status:</label>
+                                            <input type="number" id="status" name="Status" value="4" required>
+
+                                            <label for="dateModified">DateModified:</label>
+                                            <input type="datetime-local" id="dateModified" name="DateModified" value="2024-01-02T12:34:56" required>
+
+                                            <label for="fineprint">Fineprint:</label>
+                                            <input type="text" id="fineprint" name="Fineprint" value="value" required>
+
+                                            <label for="readyForWorkOrder">ReadyForWorkOrder:</label>
+                                            <input type="checkbox" id="readyForWorkOrder" name="ReadyForWorkOrder">
+
+                                            <label for="duration">Duration:</label>
+                                            <input type="number" id="duration" name="Duration" value="42" required>
+
+                                            <label for="signerName">SignerName:</label>
+                                            <input type="text" id="signerName" name="SignerName" value="value" required>
+
+                                            <label for="signerTitle">SignerTitle:</label>
+                                            <input type="text" id="signerTitle" name="SignerTitle" value="value" required>
+
+                                            <label for="signerSignature">SignerSignature:</label>
+                                            <input type="text" id="signerSignature" name="SignerSignature" value="value" required>
+
+                                            <label for="signatureStyle">SignatureStyle:</label>
+                                            <input type="text" id="signatureStyle" name="SignatureStyle" value="value" required>
+
+                                            <label for="dead">Dead:</label>
+                                            <input type="checkbox" id="dead" name="Dead" checked>
+
+                                            <label for="createdBy">CreatedBy:</label>
+                                            <input type="text" id="createdBy" name="CreatedBy" value="value" required>
+
+                                            <label for="hidePhaseTotal">HidePhaseTotal:</label>
+                                            <input type="checkbox" id="hidePhaseTotal" name="HidePhaseTotal" checked>
+
+                                            <label for="displayDiscountAmountOnPrintable">DisplayDiscountAmountOnPrintable:</label>
+                                            <input type="checkbox" id="displayDiscountAmountOnPrintable" name="DisplayDiscountAmountOnPrintable" checked>
+
+                                            <label for="hideEstimateTotal">HideEstimateTotal:</label>
+                                            <input type="checkbox" id="hideEstimateTotal" name="HideEstimateTotal" checked>
+
+                                            <label for="depositAmount">DepositAmount:</label>
+                                            <input type="number" id="depositAmount" name="DepositAmount" value="123.45" required>
+
+                                            <label for="depositAmountUnit">DepositAmountUnit:</label>
+                                            <input type="text" id="depositAmountUnit" name="DepositAmountUnit" value="value" required>
+
+                                            <label for="depositNote">DepositNote:</label>
+                                            <input type="text" id="depositNote" name="DepositNote" value="value" required>
+
+                                            <label for="amount">Amount:</label>
+                                            <input type="number" id="amount" name="Amount" value="678.90" required>
+
+                                            <label for="paidDate">PaidDate:</label>
+                                            <input type="date" id="paidDate" name="PaidDate" value="2024-01-02" required>
+
+                                            <label for="payaVaultId">PayaVaultId:</label>
+                                            <input type="text" id="payaVaultId" name="PayaVaultId" value="value" required>
+
+                                            <label for="paymentMethodPreview">PaymentMethodPreview:</label>
+                                            <input type="text" id="paymentMethodPreview" name="PaymentMethodPreview" value="value" required>
+
+                                            <label for="payaVaultLocationId">PayaVaultLocationId:</label>
+                                            <input type="text" id="payaVaultLocationId" name="PayaVaultLocationId" value="value" required>
+
+                                            <label for="token">Token:</label>
+                                            <input type="text" id="token" name="Token" value="value" required>
+
+                                            <button type="submit">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" id="close-modal" data-dismiss="modal">Close</button>
+                                        <!-- Add additional buttons if needed -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
+    <script>
+        var CustomerId = new URLSearchParams(window.location.search).get('CustomerId');
+        fetchCustomerData(CustomerId);
+        function fetchCustomerData(customerId) {
+            $.ajax({
+                url: 'https://localhost:44367/api/customers/' + customerId,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
 
+                    populateTableRow(data);
+                    console.log(data)
+                },
+                error: function (error) {
+                    console.error('Error fetching customer data:', error);
+
+                }
+            });
+        }
+
+        function populateTableRow(customerData) {
+
+            $('#name').html(` ${customerData.FirstName}`);
+            $('#salesPerson').html(` ${customerData.Salesman}`);
+        }
+
+
+        $(document).ready(function () {
+            $("#estimateButton").click(function () {
+                // Show the modal
+                $('#myModal').modal('show');
+            });
+
+            // Attach a click event to the modal close button
+            $("#close-modal").click(function () {
+                // Close the modal
+                $('#myModal').modal('hide');
+            });
+        });
+
+
+
+        //post the estimate
+
+        document.getElementById('postDataForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                "UserId": parseInt(document.getElementById('userId').value),
+                "LeadsId": parseInt(document.getElementById('leadsId').value),
+                "Name": document.getElementById('name').value,
+                "LineItemIds": document.getElementById('lineItemIds').value,
+                "CustomerAccepted": document.getElementById('customerAccepted').checked,
+                "Notes": document.getElementById('notes').value,
+                "LocationId": document.getElementById('locationId').value,
+                "Type": document.getElementById('type').value,
+                "number": parseInt(document.getElementById('number').value),
+                "Status": parseInt(document.getElementById('status').value),
+                "DateModified": document.getElementById('dateModified').value,
+                "Fineprint": document.getElementById('fineprint').value,
+                "ReadyForWorkOrder": document.getElementById('readyForWorkOrder').checked,
+                "Duration": parseInt(document.getElementById('duration').value),
+                "SignerName": document.getElementById('signerName').value,
+                "SignerTitle": document.getElementById('signerTitle').value,
+                "SignerSignature": document.getElementById('signerSignature').value,
+                "SignatureStyle": document.getElementById('signatureStyle').value,
+                "Dead": document.getElementById('dead').checked,
+                "CreatedBy": document.getElementById('createdBy').value,
+                "HidePhaseTotal": document.getElementById('hidePhaseTotal').checked,
+                "DisplayDiscountAmountOnPrintable": document.getElementById('displayDiscountAmountOnPrintable').checked,
+                "HideEstimateTotal": document.getElementById('hideEstimateTotal').checked,
+                "DepositAmount": parseFloat(document.getElementById('depositAmount').value),
+                "DepositAmountUnit": document.getElementById('depositAmountUnit').value,
+                "DepositNote": document.getElementById('depositNote').value,
+                "Amount": parseFloat(document.getElementById('amount').value),
+                "PaidDate": document.getElementById('paidDate').value,
+                "PayaVaultId": document.getElementById('payaVaultId').value,
+                "PaymentMethodPreview": document.getElementById('paymentMethodPreview').value,
+                "PayaVaultLocationId": document.getElementById('payaVaultLocationId').value,
+                "Token": document.getElementById('token').value
+            };
+
+            // Make AJAX request
+            fetch('https://localhost:44367/api/Estimates', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            }) 
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Close the modal if needed
+                    document.getElementById('myModal').style.display = 'none';
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
 
 </html>

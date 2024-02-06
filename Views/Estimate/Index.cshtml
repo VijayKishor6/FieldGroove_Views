@@ -12,10 +12,7 @@
     <link rel="stylesheet" href="~/lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="~/lib/leaflet/leaflet.min.css" asp-append-version="true" />
 
-  @*   <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAFTFsqMLm_po0hSAURG9D_9QmSnMgvAg&callback=initMap"
-            type="text/javascript"></script> *@
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
         </head >
         <style >
@@ -24,14 +21,13 @@
             font-size: 13px;
         }
 
+        .test-company{
+            text-decoration:none !important;
+            pointer-events:cursor;
+        }
       
     </style>
-    <script>
-        function redirectToTestPage() {
-            var testPageUrl = '@Url.Action("Test", "Estimate")';
-            window.location.href = testPageUrl;
-        }
-    </script>
+   
   
     <body>
         <div>
@@ -103,10 +99,10 @@
 
                         <div class="row">
                             <div class="col-6">
-                                <button type="button" class="btn" style="width:180px">Light</button>
+                                <button type="button" class="btn btnlight style="width:180px">Light</button>
                             </div>
                             <div class="col-6">
-                                <button type="button" class="btn " style="width:180px; color:">Info</button>
+                                <button type="button" class="btn btn-info" style="width:180px; color:">Info</button>
                             </div>
                         </div>
                     </div>
@@ -216,23 +212,8 @@
                                     <th scope="col" class="border">Contact</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-
-                                    <td scope="row" onclick="redirectToTestPage()" class="border ">
-                                        <a>TestCompany</a>
-                                    </td>
-                                    <td class="border" >Mark</td>
-                                    <td class="border">Otto</td>
-                                    <td class="border">Otto</td>
-                                    <td class="border">Otto</td>
-                                    <td class="border">Otto</td>
-                                    <td class="border">Otto</td>
-                                    <td class="border">Otto</td>
-                                    <td class="border">Otto</td>
-
-
-                                </tr>
+                            <tbody id="customerTableBody">
+                               
                             </tbody>
                         </table>
                     </div>
@@ -258,5 +239,57 @@
         </div>
     </body>
 
+    <script>
+        function redirectToTestPage(CustomerId) {
+           
+           
+            var testPageUrl = '/Estimate/Test?CustomerId=' + CustomerId;
+            window.location.href = testPageUrl;
+        }
+
+
+
+        $(document).ready(function () {
+            // Function to fetch data from the API and update the table
+            function fetchData() {
+                $.ajax({
+                    url: 'https://localhost:44367/api/Customers',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log('Fetched Data:', data);
+
+                        // Clear existing table rows
+                        $('#customerTableBody').empty();
+
+                        // Iterate through the data and append rows to the table
+                        $.each(data, function (index, customer) {
+                            var estimate = customer.Estimate;
+                            $('#customerTableBody').append(
+                                '<tr>' +
+                                '<td scope="row" onclick="redirectToTestPage(' + customer.CustomerId + ')" class="border"><a href="#" class="test-company">' + customer.CompanyName + '</a></td>' +
+                                '<td class="border">' + '' + '</td>' +
+                                '<td class="border">' + customer.AccountType + '</td>' +
+                                '<td class="border">' + '' + '</td>' +
+                                '<td class="border">' + '' + '</td>' +
+                                '<td class="border">' + (estimate ? estimate.Status : '') + '</td>' +
+                                '<td class="border">' +'' + '</td>' +
+                                '<td class="border">' + customer.Salesman + '</td>' +
+                                '<td class="border">' + '' + '</td>' +
+                                '</tr>'
+                            );
+                        });
+                    },
+                    error: function (error) {
+                        console.log('Error fetching data:', error);
+                    }
+                });
+            }
+
+            // Call the fetchData function when the document is ready
+            fetchData();
+        });
+
+    </script>
 
 </html>
