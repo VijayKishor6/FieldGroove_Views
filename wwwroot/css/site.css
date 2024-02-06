@@ -21,6 +21,9 @@ html {
 body {
     margin-bottom: 60px;
 }
+.header-logo{
+    width:100%;
+}
 
 .logo {
     max-width: 264px;
