@@ -89,28 +89,16 @@
                             <th>Name</th>
                             <th>Project Name</th>
                             <th>Status</th>
+                            <th>Date Created</th>
+                            <th>Contact</th>
                             <th>Action</th>
+                            <th>Assignee</th>
+                            <th>Bid Date</th>
+                            <th>operations</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Sample data, replace with your actual data from the server -->
-                        <tr>
-                            <td>Lead 1</td>
-                            <td>Project A</td>
-                            <td>Active</td>
-                            <td>
-                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editLeadModal">Edit</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Lead 2</td>
-                            <td>Project B</td>
-                            <td>Inactive</td>
-                            <td>
-                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editLeadModal">Edit</button>
-                            </td>
-                        </tr>
-                        <!-- Add more rows as needed -->
+                       
                     </tbody>
                 </table>
             </div>
@@ -130,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
             <div class="modal fade" id="editLeadModal" tabindex="-1" aria-labelledby="editLeadModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -198,11 +186,46 @@
 <script>
     $(document).ready(function () {
         // Initialize DataTable
-        $('#leadsTable').DataTable();
+        var dataTable = $('#leadsTable').DataTable({
+            columns: [
+                { data: 'Name', defaultContent: '-' },
+                { data: 'ProjectName', defaultContent: '-' },
+                { data: 'Status', defaultContent: '-' },
+                { data: 'DateCreated', defaultContent: '-' },
+                { data: 'Phone', defaultContent: '-' },
+                { data: 'Action', defaultContent: '-' },
+                { data: 'Assignee', defaultContent: '-' },
+                { data: 'BidDate', defaultContent: '-' },
+                {
+                    data: null,
+                    render: function (data, type, row) {
+                        // Add an Edit button for each row
+                        return '<button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editLeadModal" data-id="' + row.Id + '">Edit</button>';
+                    }
+                }
+            ]
+        });
+
+        // Fetch data using AJAX
+        $.ajax({
+            url: 'https://localhost:44367/api/Opportunities/opp', // Change the URL to your API endpoint
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                // Clear existing rows
+                dataTable.clear();
+
+                // Add new rows based on the received data
+                dataTable.rows.add(data).draw();
+            },
+            error: function (error) {
+                console.error('Error fetching data:', error);
+            }
+        });
 
         // Add DataTables search functionality to the search input
         $('input[type="search"]').on('keyup', function () {
-            $('#leadsTable').DataTable().search($(this).val()).draw();
+            dataTable.search($(this).val()).draw();
         });
     });
 </script>
