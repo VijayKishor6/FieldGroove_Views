@@ -109,7 +109,7 @@
                                         <tr>
                                             <td>Customer:</td>
                                             <td>
-                                                <select class="form-select" id="customerDropdown" name="Customer">
+                                                <select class="form-select" id="customerDropdown"  name="Customer">
                                                   
                                                 </select>
                                             </td>
@@ -224,7 +224,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button id="saveButton" type="button" class="btn btn-primary" onclick="saveOpportunity()">Save changes</button>
+                            <button id="saveButton" type="button" class="btn btn-primary" >Save changes</button>
                         </div>
                     </div>
                 </div>
@@ -244,23 +244,25 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        $('#saveButton').on('click', function () {
-           
-           
+     $(document).ready(function () {
 
+       
+
+        $('#saveButton').on('click', function () {
+
+            const fetchCustomerName = $('#customerDropdown').val();
+            console.log(fetchCustomerName);
 
             const formData = {
                 CompanyName: $('#CompanyName').val(),
                 FirstName: $('#FirstName').val(),
                 LastName: $('#LastName').val(),
                 ProjectName: $('#ProjectName').val(),
-              //  CustomerName: $('#customerDropdown').val(),
-                // ... add other properties as needed
+              // CustomerName: $('#customerDropdown').val(),
+               
                 UserId: 1,
-                CustomerId: 1
-
-                
+                CustomerId:2
+               
             };
 
             // API endpoint URL
@@ -279,15 +281,17 @@
                     // Add any further handling here
                 },
                 error: function (xhr, textStatus, errorThrown) {
-                    console.error('Error creating opportunity:', errorThrown);
-                    xhr.text().then(errorMessage => {
-                        console.log('Error message:', errorMessage);
-                    });
+                    console.error('Error fetching opportunities:', errorThrown);
+                    console.log('Error response:', xhr.responseText);
+
+                    // Handle the error response as needed
+
                 }
             });
         });
     });
 
+    //Display Opportunity Table
     $(document).ready(function () {
         // Function to retrieve and display opportunities
         function getOpportunities() {
@@ -307,9 +311,9 @@
                                 <td>${opportunity.Status}</td>
                                 <td>${opportunity.Name}</td>
                                 <td>${opportunity.Address1}</td>
-                            <td>${opportunity.Salesperson}</td>
-                            <td>${opportunity.Action}</td>
-                            <td>${opportunity.DueDate}</td>
+                                <td>${opportunity.Salesperson}</td>
+                                <td>${opportunity.Action}</td>
+                                <td>${opportunity.DueDate}</td>
                            
                         </tr>`;
 
@@ -329,9 +333,8 @@
         // Call getOpportunities function on page load
         getOpportunities();
     });
-
+    //Displaying Customer Name and SalesPerson in DropDown Button
     $(document).ready(function () {
-        // Function to retrieve and display opportunities
         function getOpportunities() {
             const apiUrl = 'https://localhost:44367/api/Customers';
 
@@ -347,14 +350,13 @@
 
                         // Append the row to the table body
                         $('#customerDropdown').append(CustomerName);
+                       
 
                         const SalesPersonName = `<option value="salesperson1">${opportunity.Salesman}</option>`;
 
                         // Append the row to the table body
                         $('#salespersonDropdown').append(SalesPersonName);
-                    });
-
-                    
+                    });   
                 },
                 error: function (xhr, textStatus, errorThrown) {
                     console.error('Error fetching opportunities:', errorThrown);
