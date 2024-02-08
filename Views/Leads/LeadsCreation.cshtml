@@ -28,7 +28,7 @@
                             <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Photos(0)</button>
                         </div>
                     </nav>
-                    <div class="tab-content p-2" id="nav-tabContent">
+                    <div class="tab-content p-2 border" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
                         <div class="row">
                             <div class="col-2">
@@ -52,7 +52,7 @@
                                 <label class="pe-5">Status</label>
                             </div>
                                     <div class="dropdown col">
-                                        <button class="btn  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="statusDropdown">
                                             Select a status...
                                         </button>
                                         <ul class="dropdown-menu">
@@ -68,8 +68,10 @@
                                 <label class="pe-5">Terms</label>
                             </div>
                                     <div class="dropdown col">
-                                        <button class="btn  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="termsDropdown">
                                             Select a terms...
+                                    <span id="selectedTerms"></span>
+
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">30days</a></li>
@@ -115,9 +117,11 @@
                                             </td>
                                             <td>
                                                 <div class="dropdown">
-                                                    <button class="btn  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <button class="btn  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="leadSourceDropdown">
                                                        Select a lead source
-                                                    </button>
+                                                        <span id="selectedLeadSource"></span>
+
+                                                   </button>
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item" href="#">Google Ad Words</a></li>
                                                         <li><a class="dropdown-item" href="#">Referral</a></li>
@@ -127,8 +131,10 @@
                                             </td>
                                             <td>
                                                 <div class="dropdown">
-                                                    <button class="btn  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <button class="btn  btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="locationDropdown">
                                                        New York(NY)
+                                                        <span id="selectedLocation"></span>
+
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item" href="#">New York(NY)</a></li>                                                     
@@ -158,20 +164,20 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="Home">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="Cell">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="Work">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="Email">
 
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="Website">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -196,20 +202,20 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="Address1">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="Address2">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="City">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="State">
 
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="Zip">
                                             </td>
                                         </tr>
                                     </tbody>
@@ -318,6 +324,14 @@
     </div>
 <script>
     $(document).ready(function () {
+        const selectedValues = {};
+        $('.dropdown-menu a').on('click', function () {
+            const dropdownButton = $(this).closest('.dropdown').find('button');
+            dropdownButton.text($(this).text());
+            dropdownButton.data('selected-value', $(this).data('value'));
+            selectedValues[dropdownButton.attr('id')] = $(this).text(); 
+            console.log(`Selected ${dropdownButton.attr('id')}: ${$(this).text()}`);
+        });
         $('#saveButton').on('click', function () {
             // Create an object to store form data
             const formData = {
@@ -325,8 +339,17 @@
                 FirstName: $('#FirstName').val(),
                 LastName: $('#LastName').val(),
                 ProjectName: $('#ProjectName').val(),
-                // ... add other properties as needed
-
+                PhoneHome: $('#Home').val(),
+                PhoneCell:$('#Cell').val(),
+                PhoneWork:$('#Work').val(),
+                Email:$('#Email').val(),
+                Website:$('#Website').val(),
+                Address1:$('#Address1').val(),
+                Address2:$('#Address2').val(),
+                City:$('#City').val(),
+                State:$('#State').val(),
+                Zip: $('#Zip').val(),
+                SelectedValues: {},
                 UserId: 1,
                 CustomerId: 1
             };
@@ -353,6 +376,7 @@
                     });
                 }
             });
+
         });
     });
 </script>
