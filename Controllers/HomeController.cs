@@ -12,9 +12,12 @@ namespace FieldGroove_Views.Controllers
         public IActionResult Opportunity()
         {
             return View();
-        }
+        }   
 
         public IActionResult Dashboard()
+        {
+            return View();
+        }  public IActionResult LeadConvert()
         {
             return View();
         }

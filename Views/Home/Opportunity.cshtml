@@ -88,7 +88,6 @@
                             <th scope="col">Salesperson</th>
                             <th scope="col">Action</th>
                             <th scope="col">Due Date</th>
-                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -321,30 +320,33 @@
         function getOpportunities() {
             const apiUrl = 'https://localhost:44367/api/Opportunities';
 
-            $.ajax({
+            // Initialize DataTable on the table
+            const dataTable = $('#opportunityTable').DataTable({
+                columns: [
+                    { data: 'CustomerId', defaultContent: '-' },
+                    { data: 'CreatedBy', defaultContent: '-' },
+                    { data: 'ModifiedBy', defaultContent: '-' },
+                    { data: 'Status', defaultContent: '-' },
+                    { data: 'Name', defaultContent: '-' },
+                    { data: 'Address1', defaultContent: '-' },
+                    { data: 'Salesperson', defaultContent: '-' },
+                    { data: 'Action', defaultContent: '-' },
+                    { data: 'DueDate', defaultContent: '-' }
+                ],
+                // Add any additional DataTables options as needed
+            });
+
+            // Ajax request to fetch opportunities
+            $.ajax({    
                 url: apiUrl,
                 type: 'GET',
                 success: function (data) {
                     console.log(data);
-                    $.each(data, function (index, opportunity) {
-                        
-                        // Assuming the opportunity object has properties like Customer, Created, Modified, etc.
-                        const row = `<tr>
-                                <td>${opportunity.CustomerId}</td>
-                                <td>${opportunity.CreatedBy}</td>
-                                <td>${opportunity.ModifiedBy}</td>
-                                <td>${opportunity.Status}</td>
-                                <td>${opportunity.Name}</td>
-                                <td>${opportunity.Address1}</td>
-                                <td>${opportunity.Salesperson}</td>
-                                <td>${opportunity.Action}</td>
-                                <td>${opportunity.DueDate}</td>
-                           
-                        </tr>`;
+                    // Clear existing rows
+                    dataTable.clear();
 
-                        // Append the row to the table body
-                        $('#tableBody').append(row);
-                    });
+                    // Add new rows based on the received data
+                    dataTable.rows.add(data).draw();
                 },
                 error: function (xhr, textStatus, errorThrown) {
                     console.error('Error fetching opportunities:', errorThrown);
