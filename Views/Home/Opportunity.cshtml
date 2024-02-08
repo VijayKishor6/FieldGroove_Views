@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="~/css/Opportunity.css" asp-append-version="true" />
 </head>
 <div class="row p-0 m-0 ">
-	<div class="col-lg-8 col-12 p-0 m-0">
+	<div class="col-lg-9 col-12 p-0 m-0">
 		<div class="d-flex flex-lg-row flex-column justify-content-between  bg-color border border-start-0 border-top-0 p-4">
 			<div>
 				<h3>
@@ -18,42 +18,44 @@
 			</div>
 		</div>
 		<div class="row p-3 m-0  border border-start-0 border-top-0">
-			<div class="col-lg-3 col-12">
+			<div class="col-lg-4 col-12 opportunity_select">
 				<div class="border gap-2  bg-color p-3">
 					<input class="form-control mb-3  bg-color" type="search" placeholder="Search" aria-label="Search">
-					<select class="form-select mb-3" aria-label="Default select example">
-						<option selected>Open this select menu</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+
+                    <select class="form-select mb-3 opportunity_select" aria-label="Default select example">
+						<option selected>Select a Status</option>
+						
 					</select>
-					<select class="form-select mb-3" aria-label="Default select example">
+                    <select class="form-select mb-3 opportunity_select" aria-label="Default select example">
 						<option selected>Open this select menu</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+						
 					</select>
-					<select class="form-select mb-3" aria-label="Default select example">
-						<option selected>Open this select menu</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+                    <select class="form-select mb-3 opportunity_select" aria-label="Default select example">
+						<option selected>Sales a SalesPerson</option>
+						
 					</select>
-					<select class="form-select mb-3" aria-label="Default select example">
-						<option selected>Open this select menu</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-					</select>
-					<div class="form-check mb-3">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						<label class="form-check-label" for="flexCheckDefault">
-							Expired
-						</label>
-					</div>
+                    <div class="d-flex justify-content-between">
+					    <div class="form-check mb-3">
+						    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+						    <label class="form-check-label" for="flexCheckDefault">
+							    Needs Scheduling
+						    </label>
+					    </div>
+                        <a id="moreOption">More Option</a>
+                    </div>
+                    <div id="CityCounty" style="display: none;">
+                        <!-- Additional fields initially hidden -->
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="City" id="City" >
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="County" id="County" >
+                        </div>
+                    </div>
+
 					<div class="d-flex justify-content-evenly p-0 m-0">
-						<button type="button" class="btn btn-secondary text-black badge border-0 px-3"><span class="text-black"><iconify-icon icon="ph:download-fill"></iconify-icon></span>&nbsp;Export</button>
-						<button type="button" class="btn btn-primary    px-3">Filter</button>
+                        <button type="button" class="btn btn-light text-black border-0 px-5 opportunity_select">Clear</button>
+                        <button type="button" class="btn btn-primary opportunity_select   px-5">Filter</button>
 					</div>
 				</div>
 			</div>
@@ -229,13 +231,7 @@
                     </div>
                 </div>
             </div>
-
-
-
 		</div>
-
-
-
 	</div>
 
 	<div class="col-4">
@@ -244,52 +240,80 @@
 </div>
 
 <script>
-     $(document).ready(function () {
+    $(document).ready(function () {
 
-       
+        //More Option Login
+        function toggleAdditionalFields() {
+            $('#CityCounty').toggle();
+        }
 
+        // Click event for the "More Option" link
+        $('#moreOption').on('click', function () {
+            toggleAdditionalFields();
+        });
+
+        //Save Button Logic 
         $('#saveButton').on('click', function () {
 
             const fetchCustomerName = $('#customerDropdown').val();
             console.log(fetchCustomerName);
 
-            const formData = {
-                CompanyName: $('#CompanyName').val(),
-                FirstName: $('#FirstName').val(),
-                LastName: $('#LastName').val(),
-                ProjectName: $('#ProjectName').val(),
-              // CustomerName: $('#customerDropdown').val(),
-               
-                UserId: 1,
-                CustomerId:2
-               
-            };
+            // Assuming you have an API endpoint to fetch customerId based on customer name
+            const customerIdApiUrl = 'https://localhost:44367/api/Customers/GetCustomerId/?name=' + fetchCustomerName;
 
-            // API endpoint URL
-            const apiUrl = 'https://localhost:44367/api/Opportunities';
-
-            // Ajax request to the API
+            // Ajax request to fetch customerId
             $.ajax({
-                url: apiUrl,
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(formData),
-                success: function (data) {
-                    console.log('Opportunity created successfully:', data);
-                    window.location.href = '@Url.Action("Opportunity", "Home")';
+                url: customerIdApiUrl,
+                type: 'GET',
+                dataType: 'json', // Explicitly set the expected data type
+                success: function (customerIdData) {
 
-                    // Add any further handling here
+                    const customerId = customerIdData && customerIdData.CustomerId;
+
+                    // Once you have the customerId, include it in the formData
+                    const formData = {
+                        CompanyName: $('#CompanyName').val(),
+                        FirstName: $('#FirstName').val(),
+                        LastName: $('#LastName').val(),
+                        ProjectName: $('#ProjectName').val(),
+                        // CustomerName: $('#customerDropdown').val(),
+                        UserId: 1,
+                        customerId: parseInt(customerId) // Include the fetched customerId here
+                    };
+
+                    // API endpoint URL
+                    const apiUrl = 'https://localhost:44367/api/Opportunities';
+
+                    // Ajax request to the API
+                    $.ajax({
+                        url: apiUrl,
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(formData),
+                        success: function (data) {
+                            console.log('Opportunity created successfully:', data);
+                            window.location.href = '@Url.Action("Opportunity", "Home")';
+
+                            // Add any further handling here
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                            console.error('Error fetching opportunities:', errorThrown);
+                            console.log('Error response:', xhr.responseText);
+
+                            // Handle the error response as needed
+                        }
+                    });
                 },
                 error: function (xhr, textStatus, errorThrown) {
-                    console.error('Error fetching opportunities:', errorThrown);
+                    console.error('Error fetching customerId:', errorThrown);
                     console.log('Error response:', xhr.responseText);
 
-                    // Handle the error response as needed
-
+                    // Handle the error response for fetching customerId
                 }
             });
         });
     });
+
 
     //Display Opportunity Table
     $(document).ready(function () {
@@ -301,11 +325,12 @@
                 url: apiUrl,
                 type: 'GET',
                 success: function (data) {
+                    console.log(data);
                     $.each(data, function (index, opportunity) {
-                        console.log(data);
+                        
                         // Assuming the opportunity object has properties like Customer, Created, Modified, etc.
                         const row = `<tr>
-                                <td>${opportunity.CompanyName}</td>
+                                <td>${opportunity.CustomerId}</td>
                                 <td>${opportunity.CreatedBy}</td>
                                 <td>${opportunity.ModifiedBy}</td>
                                 <td>${opportunity.Status}</td>
@@ -346,7 +371,7 @@
                     $.each(data, function (index, opportunity) {
                         
                         // Assuming the opportunity object has properties like Customer, Created, Modified, etc.
-                        const CustomerName = `<option value="${opportunity.CustomerName}">${opportunity.CompanyName}</option>`;
+                        const CustomerName = `<option value="${opportunity.CompanyName}">${opportunity.CompanyName}</option>`;
 
                         // Append the row to the table body
                         $('#customerDropdown').append(CustomerName);
