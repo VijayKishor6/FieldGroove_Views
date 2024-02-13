@@ -54,7 +54,12 @@
 
         th, td {
             border: 1px solid grey;
-            text-align: left;
+            text-align: center;
+        }
+
+        .countEstimate{
+            box-shadow: rgba(0, 0, 0, 0.20) 0px 3px 8px;
+            font-size : 12px;
         }
 
     </style>
@@ -151,8 +156,27 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div id="name">
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-one">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-one" tabindex="-1" aria-labelledby="model-popup-one-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                            
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <label for="nameInput">Enter Name:</label>
+                                                                    <input type="text" id="nameInput" class="form-control" placeholder="Enter the new name">
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                   <button type="button" class="btn btn-outline-info" >Save</button>
+                                                                 
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </td>
@@ -171,9 +195,34 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <!-- Icon trigger button -->
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-two">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-two" tabindex="-1" aria-labelledby="model-popup-two-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-two-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -191,9 +240,33 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div id="salesPerson">
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-three">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-three" tabindex="-1" aria-labelledby="model-popup-three-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-three-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -211,9 +284,33 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-gear-fill"></i>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-four">
+                                                        <i class="bi bi-gear-fill" ></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-four" tabindex="-1" aria-labelledby="model-popup-four-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-four-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -233,9 +330,33 @@
                                                         Test company
 
                                                     </a>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-five">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-five" tabindex="-1" aria-labelledby="model-popup-five-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-five-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -253,9 +374,33 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div>
                                                     </div>
-                                                    <div>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-six">
                                                         <i class="bi bi-gear-fill"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-six" tabindex="-1" aria-labelledby="model-popup-six-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-six-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -273,9 +418,33 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div>
                                                     </div>
-                                                    <div>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-seven">
                                                         <i class="bi bi-gear-fill"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-seven" tabindex="-1" aria-labelledby="model-popup-seven-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-seven-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -293,9 +462,33 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div>
                                                     </div>
-                                                    <div>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-eight">
                                                         <i class="bi bi-gear-fill"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-eight" tabindex="-1" aria-labelledby="model-popup-eight-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-eight-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -313,9 +506,33 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-nine">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-nine" tabindex="-1" aria-labelledby="model-popup-nine-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-nine-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -335,9 +552,33 @@
                                                         None Yet
 
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-ten">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-ten" tabindex="-1" aria-labelledby="model-popup-ten-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-ten-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -353,11 +594,33 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-column">
                                                         <span> Assigned office location</span>
-                                                        <span>NewYork</span>
+                                                        <span id="officeLoactionValue">NewYork</span>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-eleven">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-eleven" tabindex="-1" aria-labelledby="model-popup-eleven-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                           
+                                                          
+                                                                    <div class="modal-body">
+                                                                    <label for="setOfficeLoactionValue">Enter Location:</label>
+                                                                    <input type="text" id="setOfficeLoactionValue" class="form-control" placeholder="Enter the value">
+                                                                    </div>
+                                                             
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-outline-info">Save</button>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
@@ -370,9 +633,49 @@
                                                         <span> Summary Private Note</span>
                                                         <span>NewYork</span>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-twelve">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-twelve" tabindex="-1" aria-labelledby="model-popup-twelve-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                             
+                                                           
+                                                                <div class="modal-body">
+                                                                    <table>
+                                                                        <tr>
+                                                                            <th>Summary</th>
+                                                                            <th class="ps-2">
+                                                                                <textarea cols="20" rows="6" class=" bg-light">
+
+                                                                                </textarea>
+
+                                                                            </th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>Public Notes</th>
+                                                                            <th class="ps-2">
+                                                                                <textarea cols="20" rows="6" class=" bg-light">
+
+                                                                                </textarea>
+
+                                                                            </th>
+                                                                        </tr>
+                                                                    
+                                                                    </table>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-outline-info">Save</button>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
@@ -385,9 +688,33 @@
                                                         <span> Work OrderNote</span>
                                                         <span>NewYork</span>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-thirteen">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-thirteen" tabindex="-1" aria-labelledby="model-popup-thirteen-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-thirteen-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
@@ -400,9 +727,33 @@
                                                         <span> onfidence Level</span>
                                                         <span>NewYork</span>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-fourteen">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-fourteen" tabindex="-1" aria-labelledby="model-popup-fourteen-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-fourteen-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
@@ -415,9 +766,33 @@
                                                         <span> Action Needed</span>
                                                         <span>NewYork</span>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-fifteen">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-fifteen" tabindex="-1" aria-labelledby="model-popup-fifteen-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-fifteen-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
@@ -430,9 +805,33 @@
                                                         <span>Open Task </span>
                                                         <span>NewYork</span>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-sixteen">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-sixteen" tabindex="-1" aria-labelledby="model-popup-sixteen-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-sixteen-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
@@ -445,9 +844,33 @@
                                                         <span> Assigned office location</span>
                                                         <span>NewYork</span>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-seventeen">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-seventeen" tabindex="-1" aria-labelledby="model-popup-seventeen-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-seventeen-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
@@ -460,9 +883,33 @@
                                                         <span> Assigned office location</span>
                                                         <span>NewYork</span>
                                                     </div>
-                                                    <div>
-                                                        <i class="bi bi-pencil-square"></i>
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-eighteen">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-eighteen" tabindex="-1" aria-labelledby="model-popup-eighteen-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-eighteen-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <!-- Your modal content goes here -->
+                                                                    <p>This is your modal content.</p>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
@@ -480,124 +927,89 @@
                 </div>
 
             </div>
-            <div class="row p-0 m-3 ">
-                <div class="col-12 p-0 m-0 ">
-                    <div class="bg-light d-flex justify-content-between p-3">
+            <div class="row p-0 mx-3 "> 
+                <div class="col-12 p-0 m-0 bg-light ">
+                    <div class=" d-flex justify-content-between px-3 pt-3">
                         <div class="">
                             <span class="" style="font-size:17px">Estimate</span>
                         </div>
                         <div>
                             <button class="btn btn-success" id="estimateButton">Estimate</button>
                         </div>
+                       
                         <div class="modal" tabindex="-1" role="dialog" id="myModal">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title">Your Modal Title</h5>
+                                        <h5 class="modal-title">New Estimate</h5>
 
                                     </div>
-                                    <div class="modal-body ">
+                                    <div class="modal-body">
                                         <form id="postDataForm">
-                                            <div class="d-flex flex-column " style="width:350px">
-                                            <label for="userId">UserId:</label>
-                                            <input type="number" id="userId" name="UserId" value="42" required>
+                                            <table class="table">
+                                              
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row"> <label for="name">Name:</label></th>
+                                                        <td>   <input type="text" id="estimateName" name="Name" value="value002" class="form-control" required></td>
+                                                       
+                                                       
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"> <label for="type">Type:</label></th>
+                                                        <td>  <input type="text" id="type" name="Type" value="value" class="form-control" required></td>
+                                                       
+                                                       
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"> <label for="notes">Notes:</label></th>
+                                                        <td colspan="2">  <input type="text" id="notes" name="Notes" value="value" class="form-control" required></td>
+                                                       
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">  <label for="depositAmount">Deposit:</label></th>
+                                                        <td colspan="2">
+                                                            <input type="number" id="depositAmount" name="DepositAmount" value="123.45" class="form-control"
+                                                                   required>
+                                                        </td>
 
-                                            <label for="leadsId">LeadsId:</label>
-                                            <input type="number" id="leadsId" name="LeadsId" value="25" required>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"> <label for="options">Option:</label></th>
+                                                        <td colspan="2">
+                                                          
 
-                                            <label for="name">Name:</label>
-                                            <input type="text" id="name" name="Name" value="value002" required>
+                                                            <div class="form-group">
+                                                                <label for="hidePhaseTotal" style="padding-right: 27px;">HidePhaseTotal:</label>
+                                                                <input type="checkbox" id="hidePhaseTotal" name="HidePhaseTotal" checked class="form-check-input">
+                                                            </div>
 
-                                            <label for="lineItemIds">LineItemIds:</label>
-                                            <input type="text" id="lineItemIds" name="LineItemIds" value="value" required>
+                                                            <div class="form-group">
+                                                                <label for="displayDiscountAmountOnPrintable" style="padding-right: 27px;">DisplayDiscountAmountOnPrintable:</label>
+                                                                <input type="checkbox" id="displayDiscountAmountOnPrintable"
+                                                                       name="DisplayDiscountAmountOnPrintable" checked class="form-check-input">
+                                                            </div>
 
-                                           <div class="d-flex ">
-                                                    <label for="customerAccepted">CustomerAccepted:</label>
-                                                    <input type="checkbox" id="customerAccepted" name="CustomerAccepted" class="mx-3" >
+                                                            <div class="form-group">
+                                                                <label for="hideEstimateTotal" style="padding-right: 27px;">HideEstimateTotal:</label>
+                                                                <input type="checkbox" id="hideEstimateTotal" name="HideEstimateTotal" checked class="form-check-input">
+                                                            </div>
+                                                        </td>
 
-                                           </div>
-                                            <label for="notes">Notes:</label>
-                                            <input type="text" id="notes" name="Notes" value="value" required>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                          
+                                        
 
-                                            <label for="locationId">LocationId:</label>
-                                            <input type="text" id="locationId" name="LocationId" value="value" required>
 
-                                            <label for="type">Type:</label>
-                                            <input type="text" id="type" name="Type" value="value" required>
+                                          
+                                            <!-- Repeat the same structure for other form elements -->
 
-                                            <label for="number">Number:</label>
-                                            <input type="number" id="number" name="number" value="25" required>
+                                           
 
-                                            <label for="status">Status:</label>
-                                            <input type="number" id="status" name="Status" value="4" required>
-
-                                            <label for="dateModified">DateModified:</label>
-                                            <input type="datetime-local" id="dateModified" name="DateModified" value="2024-01-02T12:34:56" required>
-
-                                            <label for="fineprint">Fineprint:</label>
-                                            <input type="text" id="fineprint" name="Fineprint" value="value" required>
-
-                                            <label for="readyForWorkOrder">ReadyForWorkOrder:</label>
-                                            <input type="checkbox" id="readyForWorkOrder" name="ReadyForWorkOrder">
-
-                                            <label for="duration">Duration:</label>
-                                            <input type="number" id="duration" name="Duration" value="42" required>
-
-                                            <label for="signerName">SignerName:</label>
-                                            <input type="text" id="signerName" name="SignerName" value="value" required>
-
-                                            <label for="signerTitle">SignerTitle:</label>
-                                            <input type="text" id="signerTitle" name="SignerTitle" value="value" required>
-
-                                            <label for="signerSignature">SignerSignature:</label>
-                                            <input type="text" id="signerSignature" name="SignerSignature" value="value" required>
-
-                                            <label for="signatureStyle">SignatureStyle:</label>
-                                            <input type="text" id="signatureStyle" name="SignatureStyle" value="value" required>
-
-                                            <label for="dead">Dead:</label>
-                                            <input type="checkbox" id="dead" name="Dead" checked>
-
-                                            <label for="createdBy">CreatedBy:</label>
-                                            <input type="text" id="createdBy" name="CreatedBy" value="value" required>
-
-                                            <label for="hidePhaseTotal">HidePhaseTotal:</label>
-                                            <input type="checkbox" id="hidePhaseTotal" name="HidePhaseTotal" checked>
-
-                                            <label for="displayDiscountAmountOnPrintable">DisplayDiscountAmountOnPrintable:</label>
-                                            <input type="checkbox" id="displayDiscountAmountOnPrintable" name="DisplayDiscountAmountOnPrintable" checked>
-
-                                            <label for="hideEstimateTotal">HideEstimateTotal:</label>
-                                            <input type="checkbox" id="hideEstimateTotal" name="HideEstimateTotal" checked>
-
-                                            <label for="depositAmount">DepositAmount:</label>
-                                            <input type="number" id="depositAmount" name="DepositAmount" value="123.45" required>
-
-                                            <label for="depositAmountUnit">DepositAmountUnit:</label>
-                                            <input type="text" id="depositAmountUnit" name="DepositAmountUnit" value="value" required>
-
-                                            <label for="depositNote">DepositNote:</label>
-                                            <input type="text" id="depositNote" name="DepositNote" value="value" required>
-
-                                            <label for="amount">Amount:</label>
-                                            <input type="number" id="amount" name="Amount" value="678.90" required>
-
-                                            <label for="paidDate">PaidDate:</label>
-                                            <input type="date" id="paidDate" name="PaidDate" value="2024-01-02" required>
-
-                                            <label for="payaVaultId">PayaVaultId:</label>
-                                            <input type="text" id="payaVaultId" name="PayaVaultId" value="value" required>
-
-                                            <label for="paymentMethodPreview">PaymentMethodPreview:</label>
-                                            <input type="text" id="paymentMethodPreview" name="PaymentMethodPreview" value="value" required>
-
-                                            <label for="payaVaultLocationId">PayaVaultLocationId:</label>
-                                            <input type="text" id="payaVaultLocationId" name="PayaVaultLocationId" value="value" required>
-
-                                            <label for="token">Token:</label>
-                                            <input type="text" id="token" name="Token" value="value" required>
-
-                                            <button type="submit">Submit</button>
+                                            <div class="form-group d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
                                     </div>
@@ -609,12 +1021,50 @@
                             </div>
                         </div>
                     </div>
+                    <div class="m-0 d-flex px-3">
+                        <span class="d-flex justify-content-center align-items-center px-3 bg-light border-2 mb-2 countEstimate"  style=" height:25px">
+                            <p id="countEstimateId" class="mb-0"></p>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center px-3 bg-light border-2 mb-2 countEstimate" style=" height:25px">
+                            <p id="dateEstimateCreated" class="mb-0"></p>
+                        </span>
+                        <div class="d-flex justify-content-center align-items-center mb-2 px-2">
+                            <a href="#" id="dataEstimateName" style="font-size:12px"></a>
+                       </div>
+                       </div>
                 </div>
             </div>
         </div>
     </body>
     <script>
         var CustomerId = new URLSearchParams(window.location.search).get('CustomerId');
+        var EstimateId = new URLSearchParams(window.location.search).get('EstimateId');
+        $('#countEstimateId').text('#1000'+EstimateId);
+
+        var EstimateDetails = '';
+        getEstimateById(EstimateId)
+        function getEstimateById(EstimateId) {
+            $.ajax({
+                url: 'https://localhost:44367/api/Estimates/' + EstimateId,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+
+                    EstimateDetails = data;
+                    var fullDateTime = EstimateDetails.DateCreated;
+                    var datePart = fullDateTime.split(' ')[0];
+                    $('#dateEstimateCreated').text(datePart);
+                    $('#dataEstimateName').text(EstimateDetails.Name);
+                    console.log()
+                },
+                error: function (error) {
+                    console.error('Error fetching customer data:', error);
+
+                }
+            });
+        }
+
+
         fetchCustomerData(CustomerId);
         function fetchCustomerData(customerId) {
             $.ajax({
@@ -632,11 +1082,13 @@
                 }
             });
         }
-
+   
         function populateTableRow(customerData) {
 
             $('#name').html(` ${customerData.FirstName}`);
+            $('#nameInput').val(`${customerData.FirstName}`);
             $('#salesPerson').html(` ${customerData.Salesman}`);
+            $('#setOfficeLoactionValue').val($('#officeLoactionValue').text());
         }
 
 
@@ -662,40 +1114,22 @@
 
             // Get form data
             const formData = {
-                "UserId": parseInt(document.getElementById('userId').value),
-                "LeadsId": parseInt(document.getElementById('leadsId').value),
-                "Name": document.getElementById('name').value,
-                "LineItemIds": document.getElementById('lineItemIds').value,
-                "CustomerAccepted": document.getElementById('customerAccepted').checked,
+                "UserId": EstimateDetails.UserId,
+                "LeadsId" : EstimateDetails.LeadsId,
+                "Name": document.getElementById('estimateName').value,
+               
                 "Notes": document.getElementById('notes').value,
-                "LocationId": document.getElementById('locationId').value,
+               
                 "Type": document.getElementById('type').value,
-                "number": parseInt(document.getElementById('number').value),
-                "Status": parseInt(document.getElementById('status').value),
-                "DateModified": document.getElementById('dateModified').value,
-                "Fineprint": document.getElementById('fineprint').value,
-                "ReadyForWorkOrder": document.getElementById('readyForWorkOrder').checked,
-                "Duration": parseInt(document.getElementById('duration').value),
-                "SignerName": document.getElementById('signerName').value,
-                "SignerTitle": document.getElementById('signerTitle').value,
-                "SignerSignature": document.getElementById('signerSignature').value,
-                "SignatureStyle": document.getElementById('signatureStyle').value,
-                "Dead": document.getElementById('dead').checked,
-                "CreatedBy": document.getElementById('createdBy').value,
+              
                 "HidePhaseTotal": document.getElementById('hidePhaseTotal').checked,
                 "DisplayDiscountAmountOnPrintable": document.getElementById('displayDiscountAmountOnPrintable').checked,
                 "HideEstimateTotal": document.getElementById('hideEstimateTotal').checked,
                 "DepositAmount": parseFloat(document.getElementById('depositAmount').value),
-                "DepositAmountUnit": document.getElementById('depositAmountUnit').value,
-                "DepositNote": document.getElementById('depositNote').value,
-                "Amount": parseFloat(document.getElementById('amount').value),
-                "PaidDate": document.getElementById('paidDate').value,
-                "PayaVaultId": document.getElementById('payaVaultId').value,
-                "PaymentMethodPreview": document.getElementById('paymentMethodPreview').value,
-                "PayaVaultLocationId": document.getElementById('payaVaultLocationId').value,
-                "Token": document.getElementById('token').value
+              
             };
-
+        
+   
             // Make AJAX request
             fetch('https://localhost:44367/api/Estimates', {
                 method: 'POST',
@@ -703,16 +1137,35 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
-            }) 
-                .then(response => response.json())
+            })
+                .then(response => {
+                    console.log('Raw Response:', response);
+                    return response.json();
+                })
                 .then(data => {
-                    console.log('Success:', data);
+                    console.log('Successfully posted:', data);
+
+                    // Check if the server response contains EstimateId
+                    if (data) {
+                        EstimateId = data.Result 
+                        var testPageUrl = '/Estimate/Test?CustomerId=' + CustomerId + '&EstimateId=' + EstimateId;
+                        window.location.href = testPageUrl;
+                       
+                    } else {
+                        console.log('EstimateId not found in the response:', data);
+                    }
+
+
                     // Close the modal if needed
                     document.getElementById('myModal').style.display = 'none';
                 })
                 .catch((error) => {
                     console.error('Error:', error);
                 });
+
+
+
+
         });
     </script>
 
