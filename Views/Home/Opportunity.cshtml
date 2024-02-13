@@ -22,7 +22,7 @@
 				<div class="border gap-2  bg-color p-3">
 					<input class="form-control mb-3  bg-color" type="search" placeholder="Search" aria-label="Search">
 
-                    <select class="form-select mb-3 opportunity_select" aria-label="Default select example">
+                    <select class="form-select mb-3 opportunity_select" aria-label="Default select example" id="badgeTextDropdown">
 						<option selected>Select a Status</option>
 						
 					</select>
@@ -362,6 +362,15 @@
     });
     //Displaying Customer Name and SalesPerson in DropDown Button
     $(document).ready(function () {
+
+        let badgeTextArray = JSON.parse(localStorage.getItem("badgeTextArray")) || [];
+
+        // Populate the badgeText values in the dropdown select
+        badgeTextArray.forEach(function (badgeText) {
+            const badgeOption = `<option value="${badgeText}">${badgeText}</option>`;
+            $('#badgeTextDropdown').append(badgeOption);
+        });
+
         function getOpportunities() {
             const apiUrl = 'https://localhost:44367/api/Customers';
 

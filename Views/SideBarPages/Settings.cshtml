@@ -1,74 +1,255 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
+
 <head>
 	<link rel="stylesheet" href="~/css/Settings.css" asp-append-version="true" />
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<div class="row p-0 m-0 ">
-	<div class="col-lg-9 col-12 border border-start-0 border-top-0 p-0 m-0">
-		<div class="d-flex flex-lg-row justify-content-between  bg-light border border-start-0 border-top-0 p-3">
-			<div>
-				<h3>
-					Settings
-				</h3>
-			</div>
-			<div>
-				<div class="d-flex">
-					<a class="nav-link dropdown-toggle p-2 px-lg-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						More
-					</a>
-					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Action</a></li>
-						<li><a class="dropdown-item" href="#">Another action</a></li>
-						<li><a class="dropdown-item" href="#">Something else here</a></li>
-					</ul>
-				
-				
-					<a class="nav-link dropdown-toggle p-2 px-lg-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Import/Export
-					</a>
-					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Action</a></li>
-						<li><a class="dropdown-item" href="#">Another action</a></li>
-						<li><a class="dropdown-item" href="#">Something else here</a></li>
-					</ul>
+	<div class="row p-0 m-0 ">
+		<div class="col-lg-9 col-12 border border-start-0 border-top-0 p-0 m-0">
+			<div class="d-flex flex-lg-row justify-content-between  bg-light border border-start-0 border-top-0 p-3">
+				<div>
+					<h3>
+						Settings
+					</h3>
+				</div>
+				<div>
+					<div class="d-flex">
+						<a class="nav-link dropdown-toggle p-2 px-lg-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							More
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Action</a></li>
+							<li><a class="dropdown-item" href="#">Another action</a></li>
+							<li><a class="dropdown-item" href="#">Something else here</a></li>
+						</ul>
+
+
+						<a class="nav-link dropdown-toggle p-2 px-lg-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Import/Export
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Action</a></li>
+							<li><a class="dropdown-item" href="#">Another action</a></li>
+							<li><a class="dropdown-item" href="#">Something else here</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div>
-			<div class="d-flex flex-lg-row-reverse p-3">
-				<button type="button" class="btn btn-secondary btn-sm px-3 cancel_button"> Cancel</button>
-				<button type="button" class="btn btn-primary btn-sm p-2 px-3 cancel_button me-2">Save</button>
-            </div>
-		</div>
-            <div class="m-3 border">
-                <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-						<button class="nav-link bg-secondary text-white Settings-nav-tabs" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Account Information</button>
-						<button class="nav-link bg-secondary text-white ms-1 Settings-nav-tabs" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Company Settings</button>
-						<button class="nav-link bg-secondary text-white ms-1 Settings-nav-tabs" id="nav-customer-tab" data-bs-toggle="tab" data-bs-target="#nav-Customer" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Customers</button>
-						<button class="nav-link bg-secondary text-white ms-1 Settings-nav-tabs" id="nav-opportunity-tab" data-bs-toggle="tab" data-bs-target="#nav-opportunity" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Opportunity</button>
-                    </div>
-                </nav>
-                <div class="tab-content p-2" id="nav-tabContent">
+			<div>
+				<div class="d-flex flex-lg-row-reverse p-3">
+					<button type="button" class="btn btn-secondary btn-sm px-3 cancel_button"> Cancel</button>
+					<button type="button" class="btn btn-primary btn-sm p-2 px-3 cancel_button me-2">Save</button>
+				</div>
+			</div>
+			<div class="m-3 border">
+				<nav>
+					<div class="nav nav-tabs" id="nav-tab" role="tablist">
+						<button class="nav-link Settings-nav-tabs" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Account Information</button>
+						<button class="nav-link ms-1 Settings-nav-tabs" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Company Settings</button>
+						<button class="nav-link ms-1 Settings-nav-tabs" id="nav-customer-tab" data-bs-toggle="tab" data-bs-target="#nav-Customer" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Customers</button>
+						<button class="nav-link ms-1 Settings-nav-tabs" id="nav-opportunity-tab" data-bs-toggle="tab" data-bs-target="#nav-opportunity" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Opportunity</button>
+					</div>
+				</nav>
+				<div class="tab-content p-2" id="nav-tabContent">
 					<div class="tab-pane fade  show active" id="nav-opportunity" role="tabpanel" aria-labelledby="nav-opportunity-tab" tabindex="0">
-						<div class="row">
-							<div class="col-2">
+
+						<!--Opportunity Type-->
+						<div class="row p-2 px-3">
+							<div class="col-lg-2 opportunity_nav_bar">
+								Opportunity Type
+							</div>
+							<div class="col-10">
+								<div class="input-group">
+									<div class="input-group-append w-100 mt-lg-0 mt-2">
+										<span class="input-group-text">
+											<div class="input-group-append" id="OpportunityTypebadgeContainer">
+												<button class="btn btn-light btn-sm" type="button" id="addItemBtn">Add Item</button>
+											</div>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--Opportunity Status Type-->
+						<div class="row p-2 px-3">
+							<div class="col-lg-2 opportunity_nav_bar">
 								Opportunity Status Type
 							</div>
 							<div class="col-10">
-								<input  >
+								<div class="input-group">
+									<div class="input-group-append w-100 mt-lg-0 mt-2">
+										<span class="input-group-text">
+											<div class="input-group-append" id="OpportunityStatusbadgeContainer">
+												<button class="btn btn-light btn-sm" type="button" id="addOpportunityStatus">Add Item</button>
+											</div>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--Opportunity Confidence Type-->
+						<div class="row p-2 px-3">
+							<div class="col-lg-2 opportunity_nav_bar">
+								Opportunity Confidence Type
+							</div>
+							<div class="col-10">
+								<div class="input-group">
+									<div class="input-group-append w-100 mt-lg-0 mt-2">
+										<span class="input-group-text">
+											<div class="input-group-append" id="badgeContainer">
+												<button class="btn btn-light btn-sm" type="button" id="addItemBtn">Add Item</button>
+											</div>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--Estimate Type-->
+						<div class="row p-2 px-3">
+							<div class="col-lg-2 opportunity_nav_bar">
+								Etimate Type
+							</div>
+							<div class="col-10">
+								<div class="input-group">
+									<div class="input-group-append w-100 mt-lg-0 mt-2">
+										<span class="input-group-text">
+											<div class="input-group-append" id="badgeContainer">
+												<button class="btn btn-light btn-sm" type="button" id="addItemBtn">Add Item</button>
+											</div>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--Phases-->
+						<div class="row p-2 px-3">
+							<div class="col-lg-2 opportunity_nav_bar">
+								Phases
+							</div>
+							<div class="col-10">
+								<div class="input-group">
+									<div class="input-group-append w-100 mt-lg-0 mt-2">
+										<span class="input-group-text">
+											<div class="input-group-append" id="badgeContainer">
+												<button class="btn btn-light btn-sm" type="button" id="addItemBtn">Add Item</button>
+											</div>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--Lost Reason 1-->
+						<div class="row p-2 px-3">
+							<div class="col-lg-2 opportunity_nav_bar">
+								Lost Reason 1
+							</div>
+							<div class="col-10">
+								<div class="input-group">
+									<div class="input-group-append w-100 mt-lg-0 mt-2">
+										<span class="input-group-text">
+											<div class="input-group-append" id="badgeContainer">
+												<button class="btn btn-light btn-sm" type="button" id="addItemBtn">Add Item</button>
+											</div>
+										</span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-                    
-                </div>
-            </div>
-    </div>
-	<div class=" col-3 bg-light">.</div>
-</div>
-</body>  
+
+				</div>
+
+				<!--Model for Settings adding status-->
+				<div class="modal fade" id="badgeModal" tabindex="-1" role="dialog" aria-labelledby="badgeModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="badgeModalLabel">Enter Badge Name</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<input type="text" class="form-control" id="modalBadgeInput" placeholder="Badge Name">
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary" id="addBadgeBtn">Add Badge</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class=" col-3 bg-light">.</div>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function () {
+
+
+		function recreateBadges() {
+			// Retrieve the badgeText array from localStorage
+			let badgeTextArray = JSON.parse(localStorage.getItem("badgeTextArray")) || [];
+
+			// Populate the badgeText values in the input field
+			badgeTextArray.forEach(function (badgeText) {
+				let newBadge = $('<span class="badge text-white ms-1">' + badgeText + '<button type="button" class="btn-close" aria-label="Close"></button></span>');
+				$("#OpportunityStatusbadgeContainer").append(newBadge);
+			});
+		}
+
+		// Call the recreateBadges function on page load
+		recreateBadges();
+
+
+		let badgeCounter = 1;
+
+
+		// Initialize badgeTextArray from localStorage or an empty array
+		let badgeTextArray = JSON.parse(localStorage.getItem("badgeTextArray")) || [];
+
+		$("#addOpportunityStatus").on("click", function () {
+			$("#badgeModal").modal("show");
+		});
+		$("#addBadgeBtn").on("click", function () {
+			let badgeText = $("#modalBadgeInput").val();
+			// Create a new badge with a close button
+			let newBadge = $('<span class="badge  text-white ms-1" id="badge' + badgeCounter + '">' + badgeText + '<button type="button" class="btn-close " aria-label="Close"></button></span>');
+
+			$("#OpportunityStatusbadgeContainer").append(newBadge);
+			// Add the badgeText to the array
+			badgeTextArray.push(badgeText);
+
+			// Update localStorage with the modified badgeTextArray
+			localStorage.setItem("badgeTextArray", JSON.stringify(badgeTextArray));
+
+			// Clear the input field in the modal
+			$("#modalBadgeInput").val('');
+
+			// Close the modal
+			$("#badgeModal").modal("hide");
+
+			// Increment the badgeCounter for the next badge
+			badgeCounter++;
+		});
+
+		$("#OpportunityStatusbadgeContainer").on("click", ".btn-close", function () {
+
+			let badgeTextToRemove = $(this).closest(".badge").text().trim();
+			badgeTextArray = badgeTextArray.filter(function (text) {
+				return text !== badgeTextToRemove;
+			});
+
+			// Update localStorage with the modified badgeTextArray
+			localStorage.setItem("badgeTextArray", JSON.stringify(badgeTextArray));
+
+			// Remove the badge from the UI
+			$(this).closest(".badge").remove();
+		});
+	});
+</script>
