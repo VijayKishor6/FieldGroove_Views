@@ -240,10 +240,10 @@
     </body>
 
     <script>
-        function redirectToTestPage(CustomerId) {
+        function redirectToTestPage(EstimateId, CustomerId) {
            
            
-            var testPageUrl = '/Estimate/Test?CustomerId=' + CustomerId;
+            var testPageUrl = '/Estimate/Test?CustomerId=' + CustomerId + '&EstimateId=' + EstimateId;
             window.location.href = testPageUrl;
         }
 
@@ -267,7 +267,7 @@
                             var estimate = customer.Estimate;
                             $('#customerTableBody').append(
                                 '<tr>' +
-                                '<td scope="row" onclick="redirectToTestPage(' + customer.CustomerId + ')" class="border"><a href="#" class="test-company">' + customer.CompanyName + '</a></td>' +
+                                '<td scope="row" onclick="redirectToTestPage(' + customer.Estimate.EstimateId + ',' + customer.CustomerId + ')" class="border"><a href="#" class="test-company">' + customer.CompanyName + '</a></td>' +
                                 '<td class="border">' + '' + '</td>' +
                                 '<td class="border">' + customer.AccountType + '</td>' +
                                 '<td class="border">' + '' + '</td>' +
