@@ -20,29 +20,31 @@
             <div class="col-lg-4 col-12">
                 <div class="border gap-2  bg-color p-3">
                     <input class="form-control mb-3  bg-color" type="search" placeholder="Search Leads..." aria-label="Search">
-                    <select class="form-select mb-3" aria-label="Default select example">
+                    <select class="form-select mb-3" id="actionFilter" aria-label="Default select example">
                         <option selected>Select an action...</option>
-                        <option value="1">Quote</option>
-                        <option value="2">Follow Up</option>
+                        <option value="Quote">Quote</option>
+                        <option value="Follow Up">Follow Up</option>
                     </select>
-                    <select class="form-select mb-3" aria-label="Default select example">
+                    <select class="form-select mb-3"  id="statusFilter" aria-label="Default select example">
                         <option selected>Select a status...</option>
-                        <option value="1">Contacted</option>
-                        <option value="2">Estimate Request</option>
+                        <option value="Contacted">Contacted</option>
+                        <option value="Estimate Request">Estimate Request</option>
                     </select>
                     <select class="form-select mb-3" aria-label="Default select example">
                         <option selected>Select a salesperson...</option>
-                        <option value="1">Vijaykishor</option>
+                        <option value="Vijaykishor">Vijaykishor</option>
                     </select>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" value="Expired" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
                             Expired
                         </label>
                     </div>
                     <div class="d-flex justify-content-evenly p-0 m-0">
-                        <button type="button" class="btn btn-secondary text-black badge border-0 px-3"><span class="text-black"><iconify-icon icon="ph:download-fill"></iconify-icon></span>&nbsp;Export</button>
-                        <button type="button" class="btn btn-primary    px-3">Filter</button>
+                        <button type="button" class="btn btn-secondary text-black badge border-0 px-3" id="exportLeads">
+                            <span class="text-black"><iconify-icon icon="ph:download-fill"></iconify-icon></span>&nbsp;Export
+                        </button>
+                        <button type="button" class="btn btn-primary px-3" id="filterLeads">Filter</button>
                     </div>
                 </div>
             </div>
@@ -189,30 +191,91 @@
                     data: null,
                     render: function (data, type, row) {
                         // Add an Edit button for each row
-                        return '<button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editLeadModal" data-id="' + row.Id + '">Edit</button>';
+                        return '<button class="btn" data-bs-toggle="modal" data-bs-target="#editLeadModal" data-id="' + row.Id + '"><i class="bi bi-download"></i></button>';
                     }
                 }
             ]
         });
+        function loadAllData() {
+            // Fetch data using AJAX
+            $.ajax({
+                url: 'https://localhost:44367/api/Opportunities/opp', // Change the URL to your API endpoint
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var filteredData = data.filter(function (item) {
+                        return item.IsCustomer === 1 || item.IsCustomer === true;
+                    });
+                    // Clear existing rows
+                    dataTable.clear();
 
-        // Fetch data using AJAX
-        $.ajax({
-            url: 'https://localhost:44367/api/Opportunities/opp', // Change the URL to your API endpoint
-            method: 'GET',
-            dataType: 'json',          
-            success: function (data) {
-                var filteredData = data.filter(function (item) {
-                    return item.IsCustomer === 1 || item.IsCustomer === true;
-                });
-                // Clear existing rows
-                dataTable.clear();
+                    // Add new rows based on the received data
+                    dataTable.rows.add(filteredData).draw();
+                },
+                error: function (error) {
+                    console.error('Error fetching data:', error);
+                }
+            });
+        }
+        function exportToCSV(data) {
+            var csv = Papa.unparse(data);
+            var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'filtered_data.csv';
 
-                // Add new rows based on the received data
-                dataTable.rows.add(filteredData).draw();
-            },
-            error: function (error) {
-                console.error('Error fetching data:', error);
-            }
+            // Append the link to the document and trigger the download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        function applyFilters() {
+            var actionFilter = $('#actionFilter').val();
+            var statusFilter = $('#statusFilter').val();
+
+            $.ajax({
+                url: 'https://localhost:44367/api/Opportunities/filtered',
+                method: 'GET',
+                dataType: 'json',
+                data: {
+                    action: actionFilter,
+                    status: statusFilter
+                },
+                success: function (data) {
+                    var filteredData = data.filter(function (item) {
+                        return item.IsCustomer === 1 || item.IsCustomer === true;
+                    });
+                    dataTable.clear();
+                    dataTable.rows.add(data).draw();
+                },
+                error: function (error) {
+                    console.error('Error fetching filtered data:', error);
+                }
+            });
+        }
+        loadAllData();
+        $('#filterLeads').on('click', function () {
+            applyFilters();
+        });
+        $('#exportLeads').on('click', function () {
+            var actionFilter = $('#actionFilter').val();
+            var statusFilter = $('#statusFilter').val();
+
+            $.ajax({
+                url: 'https://localhost:44367/api/Opportunities/filtered',
+                method: 'GET',
+                dataType: 'json',
+                data: {
+                    action: actionFilter,
+                    status: statusFilter
+                },
+                success: function (data) {
+                    exportToCSV(data);
+                },
+                error: function (error) {
+                    console.error('Error fetching filtered data:', error);
+                }
+            });
         });
 
         // Add DataTables search functionality to the search input
