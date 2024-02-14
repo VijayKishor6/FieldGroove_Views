@@ -55,7 +55,7 @@
 				</nav>
 				<div class="tab-content p-2" id="nav-tabContent">
 					<div class="tab-pane fade  show active" id="nav-opportunity" role="tabpanel" aria-labelledby="nav-opportunity-tab" tabindex="0">
-
+						 
 						<!--Opportunity Type-->
 						<div class="row p-2 px-3">
 							<div class="col-lg-2 opportunity_nav_bar">
@@ -163,7 +163,7 @@
 				</div>
 
 				<!--Model for Settings adding status-->
-				<div class="modal fade" id="badgeModal" tabindex="-1" role="dialog" aria-labelledby="badgeModalLabel" aria-hidden="true">
+				<div class="modal fade" id="OpportunityStatus" tabindex="-1" role="dialog" aria-labelledby="badgeModalLabel" aria-hidden="true">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
@@ -177,7 +177,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary" id="addBadgeBtn">Add Badge</button>
+								<button type="button" class="btn btn-primary" id="SaveOpportunity">SaveOpportunity</button>
 							</div>
 						</div>
 					</div>
@@ -192,7 +192,7 @@
 	$(document).ready(function () {
 
 
-		function recreateBadges() {
+		function OpportunityStatus() {
 			// Retrieve the badgeText array from localStorage
 			let badgeTextArray = JSON.parse(localStorage.getItem("badgeTextArray")) || [];
 
@@ -204,7 +204,7 @@
 		}
 
 		// Call the recreateBadges function on page load
-		recreateBadges();
+		OpportunityStatus();
 
 
 		let badgeCounter = 1;
@@ -214,9 +214,9 @@
 		let badgeTextArray = JSON.parse(localStorage.getItem("badgeTextArray")) || [];
 
 		$("#addOpportunityStatus").on("click", function () {
-			$("#badgeModal").modal("show");
+			$("#OpportunityStatus").modal("show");
 		});
-		$("#addBadgeBtn").on("click", function () {
+		$("#SaveOpportunity").on("click", function () {
 			let badgeText = $("#modalBadgeInput").val();
 			// Create a new badge with a close button
 			let newBadge = $('<span class="badge  text-white ms-1" id="badge' + badgeCounter + '">' + badgeText + '<button type="button" class="btn-close " aria-label="Close"></button></span>');
@@ -232,7 +232,7 @@
 			$("#modalBadgeInput").val('');
 
 			// Close the modal
-			$("#badgeModal").modal("hide");
+			$("#OpportunityStatus").modal("hide");
 
 			// Increment the badgeCounter for the next badge
 			badgeCounter++;
