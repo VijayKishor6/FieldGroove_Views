@@ -24,13 +24,12 @@
 
                     <select class="form-select mb-3 " aria-label="Default select example" id="badgeTextDropdown">
 						<option selected>Select a Status</option>
-                        <option value="Quote">Active</option>
+                        <option value="Active">Active</option>
 
 					</select>
-                    <select class="form-select mb-3" id="actionFilter" aria-label="Default select example">
+                    <select class="form-select mb-3" id="actionFilter" aria-label="Default select example" >
                         <option selected>Select an action...</option>
-                        <option value="Quote">Quote</option>
-                        <option value="Follow-up">Follow-up</option>
+                        
                     </select>
                     <select class="form-select mb-3" id="salespersonFilter" aria-label="Default select example">
                         <option selected>Select a salesperson...</option>
@@ -382,23 +381,35 @@
             // Call getOpportunities function on page load
             $('#filterLeads').on('click', function () {
                 applyFilters();
-            });
-
-            
+            }); 
         }
-       
         getOpportunities();
     });
     //Displaying Customer Name and SalesPerson in DropDown Button
     $(document).ready(function () {
 
-        let badgeTextArray = JSON.parse(localStorage.getItem("badgeTextArray")) || [];
+       function displayOpprtunityType(){
+            const apiUrl = 'https://localhost:44367/api/Settings';
 
-        // Populate the badgeText values in the dropdown select
-        badgeTextArray.forEach(function (badgeText) {
-            const badgeOption = `<option value="${badgeText}">${badgeText}</option>`;
-            $('#badgeTextDropdown').append(badgeOption);
-        });
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                success: function (data) {
+                    console.log(data);
+                    data.forEach(function (opportunity) {
+                        // Append each opportunity to the dropdown
+                        $('#actionFilter').append('<option value="' + opportunity + '">' + opportunity + '</option>');
+                    });
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.error('Error fetching opportunities:', errorThrown);
+                    xhr.text().then(errorMessage => {
+                        console.log('Error message:', errorMessage);
+                    });
+                }
+            });
+       }
+        displayOpprtunityType();
 
         function getOpportunities() {
             const apiUrl = 'https://localhost:44367/api/Customers';
