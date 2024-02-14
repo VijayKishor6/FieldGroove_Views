@@ -56,8 +56,8 @@
                                             Select a status...
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Contacted</a></li>
-                                            <li><a class="dropdown-item" href="#">Estimate Request</a></li>
+                                    <li><a class="dropdown-item"  value="Contacted">Contacted</a></li>
+                                    <li><a class="dropdown-item"  value="Estimate Request">Estimate Request</a></li>
                                         </ul>
                                     </div>
                         
@@ -74,8 +74,8 @@
 
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">30days</a></li>
-                                            <li><a class="dropdown-item" href="#">COD</a></li>
+                                            <li><a class="dropdown-item" href="#" values="30days">30days</a></li>
+                                            <li><a class="dropdown-item" href="#" values="30days">COD</a></li>
                                             </ul>
                                     </div>
                             
@@ -123,9 +123,9 @@
 
                                                    </button>
                                                     <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Google Ad Words</a></li>
-                                                        <li><a class="dropdown-item" href="#">Referral</a></li>
-                                                        <li><a class="dropdown-item" href="#">Web Search</a></li>
+                                                        <li><a class="dropdown-item" href="#" value="Google Ad Words">Google Ad Words</a></li>
+                                                        <li><a class="dropdown-item" href="#" value="Referral">Referral</a></li>
+                                                        <li><a class="dropdown-item" href="#" value="Web Search">Web Search</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -137,7 +137,7 @@
 
                                                     </button>
                                                     <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">New York(NY)</a></li>                                                     
+                                                        <li><a class="dropdown-item" href="#" value="New York(NY)">New York(NY)</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -253,12 +253,12 @@
                                                 Dropdown button
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                <li><a class="dropdown-item" href="#" value="Action">Action</a></li>
+                                        <li><a class="dropdown-item" href="#" value="Another action">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#" value="Something else here">Something else here</a></li>
                                             </ul>
                                         </div>
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <input class="form-check-input" type="checkbox" value="Notify Via Email" id="flexCheckChecked" checked>
                                         <label class="form-check-label" for="flexCheckChecked">
                                             Notify Via Email
                                         </label>
@@ -275,9 +275,9 @@
                                                 Dropdown button
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <li><a class="dropdown-item" href="#" value="Action">Action</a></li>
+                                        <li><a class="dropdown-item" href="#" value="Another action">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#" value="Something else here">Something else here</a></li>
                                             </ul>
                                         </div>
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
@@ -325,6 +325,7 @@
             console.log(`Selected ${dropdownButton.attr('id')}: ${$(this).text()}`);
         });
         $('#saveButton').on('click', function () {
+           
             // Create an object to store form data
             const formData = {
                 CompanyName: $('#CompanyName').val(),
@@ -341,6 +342,8 @@
                 City:$('#City').val(),
                 State:$('#State').val(),
                 Zip: $('#Zip').val(),
+                Status: $('#statusDropdown').val(),
+                Terms: $('#termsDropdown').val(),
                 SelectedValues: selectedValues,
                 UserId: 1,
                 CustomerId: 1
@@ -356,8 +359,9 @@
                 contentType: 'application/json',
                 data: JSON.stringify(formData),
                 success: function (data) {
+                    console.log('jhk', formData.Status);
                     console.log('Opportunity created successfully:', data);
-                    window.location.href = '@Url.Action("Index", "Home")';
+                   // window.location.href = '@Url.Action("Index", "Home")';
 
                     // Add any further handling here
                 },
@@ -366,7 +370,7 @@
                     xhr.text().then(errorMessage => {
                         console.log('Error message:', errorMessage);
                     });
-                }
+                }   
             });
 
         });
