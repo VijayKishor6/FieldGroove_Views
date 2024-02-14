@@ -159,9 +159,7 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
-
 				<!--Model for Settings adding status-->
 				<div class="modal fade" id="OpportunityStatus" tabindex="-1" role="dialog" aria-labelledby="badgeModalLabel" aria-hidden="true">
 					<div class="modal-dialog" role="document">
@@ -176,7 +174,7 @@
 								<input type="text" class="form-control" id="modalBadgeInput" placeholder="Badge Name">
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeOpportunityModel">Close</button>
 								<button type="button" class="btn btn-primary" id="SaveOpportunity">SaveOpportunity</button>
 							</div>
 						</div>
@@ -191,42 +189,17 @@
 <script>
 	$(document).ready(function () {
 
-
-		function OpportunityStatus() {
-			// Retrieve the badgeText array from localStorage
-			let badgeTextArray = JSON.parse(localStorage.getItem("badgeTextArray")) || [];
-
-			// Populate the badgeText values in the input field
-			badgeTextArray.forEach(function (badgeText) {
-				let newBadge = $('<span class="badge text-white ms-1">' + badgeText + '<button type="button" class="btn-close" aria-label="Close"></button></span>');
-				$("#OpportunityStatusbadgeContainer").append(newBadge);
-			});
-		}
-
-		// Call the recreateBadges function on page load
-		OpportunityStatus();
-
-
-		let badgeCounter = 1;
-
-
-		// Initialize badgeTextArray from localStorage or an empty array
-		let badgeTextArray = JSON.parse(localStorage.getItem("badgeTextArray")) || [];
-
 		$("#addOpportunityStatus").on("click", function () {
 			$("#OpportunityStatus").modal("show");
 		});
 		$("#SaveOpportunity").on("click", function () {
+			let badgeCounter = 1;
+
 			let badgeText = $("#modalBadgeInput").val();
 			// Create a new badge with a close button
 			let newBadge = $('<span class="badge  text-white ms-1" id="badge' + badgeCounter + '">' + badgeText + '<button type="button" class="btn-close " aria-label="Close"></button></span>');
 
 			$("#OpportunityStatusbadgeContainer").append(newBadge);
-			// Add the badgeText to the array
-			badgeTextArray.push(badgeText);
-
-			// Update localStorage with the modified badgeTextArray
-			localStorage.setItem("badgeTextArray", JSON.stringify(badgeTextArray));
 
 			// Clear the input field in the modal
 			$("#modalBadgeInput").val('');
@@ -239,16 +212,6 @@
 		});
 
 		$("#OpportunityStatusbadgeContainer").on("click", ".btn-close", function () {
-
-			let badgeTextToRemove = $(this).closest(".badge").text().trim();
-			badgeTextArray = badgeTextArray.filter(function (text) {
-				return text !== badgeTextToRemove;
-			});
-
-			// Update localStorage with the modified badgeTextArray
-			localStorage.setItem("badgeTextArray", JSON.stringify(badgeTextArray));
-
-			// Remove the badge from the UI
 			$(this).closest(".badge").remove();
 		});
 	});
