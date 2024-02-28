@@ -10,4 +10,8 @@
     <None Include="wwwroot\Images\logo.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FullCalendar.Helper" Version="1.0.2" />
+  </ItemGroup>
+
 </Project>
