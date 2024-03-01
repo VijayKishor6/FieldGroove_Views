@@ -172,7 +172,7 @@
                                                                 <!-- Modal Footer -->
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                   <button type="button" class="btn btn-outline-info" >Save</button>
+                                                                   <button type="button" class="btn btn-outline-info" id="assignName" >Save</button>
                                                                  
                                                                 </div>
                                                             </div>
@@ -217,7 +217,6 @@
                                                                 <!-- Modal Footer -->
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                    <!-- Add additional buttons if needed -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -255,12 +254,15 @@
                                                                 </div>
                                                                 <!-- Modal Body -->
                                                                 <div class="modal-body">
-                                                                    <!-- Your modal content goes here -->
-                                                                    <p>This is your modal content.</p>
+                                                                    <div class="modal-body">
+                                                                        <label for="salepersonInput">Enter SalePersonName:</label>
+                                                                        <input type="text" id="salepersonInput" class="form-control" placeholder="Enter the new name">
+                                                                    </div>
                                                                 </div>
                                                                 <!-- Modal Footer -->
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-outline-info" id="assignSalePerson">Save</button>
                                                                     <!-- Add additional buttons if needed -->
                                                                 </div>
                                                             </div>
@@ -1065,6 +1067,11 @@
         }
 
 
+     
+       
+       
+
+
         fetchCustomerData(CustomerId);
         function fetchCustomerData(customerId) {
             $.ajax({
@@ -1087,6 +1094,7 @@
 
             $('#name').html(` ${customerData.FirstName}`);
             $('#nameInput').val(`${customerData.FirstName}`);
+            $('#salepersonInput').val(`${customerData.Salesman}`);
             $('#salesPerson').html(` ${customerData.Salesman}`);
             $('#setOfficeLoactionValue').val($('#officeLoactionValue').text());
         }
@@ -1166,6 +1174,39 @@
 
 
 
+        });
+
+        $("#assignName").click(function () {
+            var nameInput = document.getElementById("nameInput");
+            $.ajax({
+                url: 'https://localhost:44367/api/customers/' +CustomerId+ '/AssignName',
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify({ FirstName: nameInput.value }),
+                success: function (response) {
+                    console.log('Name assigned successfully:', response);
+                    $('#model-popup-one').modal('hide');
+                },
+                error: function (error) {
+                    console.error('Error assigning name:', error);
+                }
+            });
+        });
+        $("#assignSalePerson").click(function () {
+            var salepersonInput = document.getElementById("salepersonInput");
+            $.ajax({
+                url: 'https://localhost:44367/api/customers/' + CustomerId + '/assignsaleperson',
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify({ Salesman : salepersonInput.value }),
+                success: function (response) {
+                    console.log('Name assigned successfully:', response);
+                    $('#model-popup-one').modal('hide');
+                },
+                error: function (error) {
+                    console.error('Error assigning name:', error);
+                }
+            });
         });
     </script>
 
