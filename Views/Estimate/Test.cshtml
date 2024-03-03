@@ -57,9 +57,9 @@
             text-align: center;
         }
 
-        .countEstimate{
+        .countEstimate {
             box-shadow: rgba(0, 0, 0, 0.20) 0px 3px 8px;
-            font-size : 12px;
+            font-size: 12px;
         }
 
     </style>
@@ -163,7 +163,7 @@
                                                     <div class="modal fade" id="model-popup-one" tabindex="-1" aria-labelledby="model-popup-one-label" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
-                                                            
+
                                                                 <!-- Modal Body -->
                                                                 <div class="modal-body">
                                                                     <label for="nameInput">Enter Name:</label>
@@ -172,8 +172,8 @@
                                                                 <!-- Modal Footer -->
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                   <button type="button" class="btn btn-outline-info" id="assignName" >Save</button>
-                                                                 
+                                                                    <button type="button" class="btn btn-outline-info" id="assignName">Save</button>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -287,7 +287,7 @@
                                                     <div>
                                                     </div>
                                                     <div data-bs-toggle="modal" data-bs-target="#model-popup-four">
-                                                        <i class="bi bi-gear-fill" ></i>
+                                                        <i class="bi bi-gear-fill"></i>
                                                     </div>
 
                                                     <!-- Modal -->
@@ -606,22 +606,34 @@
                                                     <div class="modal fade" id="model-popup-eleven" tabindex="-1" aria-labelledby="model-popup-eleven-label" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
-                                                           
-                                                          
-                                                                    <div class="modal-body">
-                                                                    <label for="setOfficeLoactionValue">Enter Location:</label>
-                                                                    <input type="text" id="setOfficeLoactionValue" class="form-control" placeholder="Enter the value">
+                                                                <div class="modal-body">
+                                                                    <label for="setOfficeLoactionValue">Set Location:</label>
+
+                                                                    <!-- Custom Styling for Dropdown -->
+                                                                    <div class="dropdown mt-2">
+                                                                        <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
+                                                                            Select an option
+                                                                        </button>
+                                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                                                            <a class="dropdown-item" href="#">Option 1</a>
+                                                                            <a class="dropdown-item" href="#">Option 2</a>
+                                                                            <a class="dropdown-item" href="#">Option 3</a>
+                                                                            <!-- Add more options as needed -->
+                                                                        </div>
                                                                     </div>
-                                                             
+                                                                </div>
+
                                                                 <!-- Modal Footer -->
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                                     <button type="button" class="btn btn-outline-info">Save</button>
-
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+
+
 
                                                 </div>
                                             </div>
@@ -643,8 +655,8 @@
                                                     <div class="modal fade" id="model-popup-twelve" tabindex="-1" aria-labelledby="model-popup-twelve-label" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
-                                                             
-                                                           
+
+
                                                                 <div class="modal-body">
                                                                     <table>
                                                                         <tr>
@@ -665,7 +677,7 @@
 
                                                                             </th>
                                                                         </tr>
-                                                                    
+
                                                                     </table>
                                                                 </div>
                                                                 <!-- Modal Footer -->
@@ -929,7 +941,7 @@
                 </div>
 
             </div>
-            <div class="row p-0 mx-3 "> 
+            <div class="row p-0 mx-3 ">
                 <div class="col-12 p-0 m-0 bg-light ">
                     <div class=" d-flex justify-content-between px-3 pt-3">
                         <div class="">
@@ -938,7 +950,7 @@
                         <div>
                             <button class="btn btn-success" id="estimateButton">Estimate</button>
                         </div>
-                       
+
                         <div class="modal" tabindex="-1" role="dialog" id="myModal">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -949,24 +961,24 @@
                                     <div class="modal-body">
                                         <form id="postDataForm">
                                             <table class="table">
-                                              
+
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row"> <label for="name">Name:</label></th>
                                                         <td>   <input type="text" id="estimateName" name="Name" value="value002" class="form-control" required></td>
-                                                       
-                                                       
+
+
                                                     </tr>
                                                     <tr>
                                                         <th scope="row"> <label for="type">Type:</label></th>
                                                         <td>  <input type="text" id="type" name="Type" value="value" class="form-control" required></td>
-                                                       
-                                                       
+
+
                                                     </tr>
                                                     <tr>
                                                         <th scope="row"> <label for="notes">Notes:</label></th>
                                                         <td colspan="2">  <input type="text" id="notes" name="Notes" value="value" class="form-control" required></td>
-                                                       
+
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">  <label for="depositAmount">Deposit:</label></th>
@@ -979,7 +991,7 @@
                                                     <tr>
                                                         <th scope="row"> <label for="options">Option:</label></th>
                                                         <td colspan="2">
-                                                          
+
 
                                                             <div class="form-group">
                                                                 <label for="hidePhaseTotal" style="padding-right: 27px;">HidePhaseTotal:</label>
@@ -1001,14 +1013,14 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                          
-                                        
 
 
-                                          
+
+
+
                                             <!-- Repeat the same structure for other form elements -->
 
-                                           
+
 
                                             <div class="form-group d-flex justify-content-end">
                                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -1024,7 +1036,7 @@
                         </div>
                     </div>
                     <div class="m-0 d-flex px-3">
-                        <span class="d-flex justify-content-center align-items-center px-3 bg-light border-2 mb-2 countEstimate"  style=" height:25px">
+                        <span class="d-flex justify-content-center align-items-center px-3 bg-light border-2 mb-2 countEstimate" style=" height:25px">
                             <p id="countEstimateId" class="mb-0"></p>
                         </span>
                         <span class="d-flex justify-content-center align-items-center px-3 bg-light border-2 mb-2 countEstimate" style=" height:25px">
@@ -1032,8 +1044,8 @@
                         </span>
                         <div class="d-flex justify-content-center align-items-center mb-2 px-2">
                             <a href="#" id="dataEstimateName" style="font-size:12px"></a>
-                       </div>
-                       </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1041,7 +1053,7 @@
     <script>
         var CustomerId = new URLSearchParams(window.location.search).get('CustomerId');
         var EstimateId = new URLSearchParams(window.location.search).get('EstimateId');
-        $('#countEstimateId').text('#1000'+EstimateId);
+        $('#countEstimateId').text('#1000' + EstimateId);
 
         var EstimateDetails = '';
         getEstimateById(EstimateId)
@@ -1067,9 +1079,9 @@
         }
 
 
-     
-       
-       
+
+
+
 
 
         fetchCustomerData(CustomerId);
@@ -1089,7 +1101,7 @@
                 }
             });
         }
-   
+
         function populateTableRow(customerData) {
 
             $('#name').html(` ${customerData.FirstName}`);
@@ -1123,21 +1135,21 @@
             // Get form data
             const formData = {
                 "UserId": EstimateDetails.UserId,
-                "LeadsId" : EstimateDetails.LeadsId,
+                "LeadsId": EstimateDetails.LeadsId,
                 "Name": document.getElementById('estimateName').value,
-               
+
                 "Notes": document.getElementById('notes').value,
-               
+
                 "Type": document.getElementById('type').value,
-              
+
                 "HidePhaseTotal": document.getElementById('hidePhaseTotal').checked,
                 "DisplayDiscountAmountOnPrintable": document.getElementById('displayDiscountAmountOnPrintable').checked,
                 "HideEstimateTotal": document.getElementById('hideEstimateTotal').checked,
                 "DepositAmount": parseFloat(document.getElementById('depositAmount').value),
-              
+
             };
-        
-   
+
+
             // Make AJAX request
             fetch('https://localhost:44367/api/Estimates', {
                 method: 'POST',
@@ -1155,10 +1167,10 @@
 
                     // Check if the server response contains EstimateId
                     if (data) {
-                        EstimateId = data.Result 
+                        EstimateId = data.Result
                         var testPageUrl = '/Estimate/Test?CustomerId=' + CustomerId + '&EstimateId=' + EstimateId;
                         window.location.href = testPageUrl;
-                       
+
                     } else {
                         console.log('EstimateId not found in the response:', data);
                     }
@@ -1179,7 +1191,7 @@
         $("#assignName").click(function () {
             var nameInput = document.getElementById("nameInput");
             $.ajax({
-                url: 'https://localhost:44367/api/customers/' +CustomerId+ '/AssignName',
+                url: 'https://localhost:44367/api/customers/' + CustomerId + '/AssignName',
                 type: 'PUT',
                 contentType: 'application/json',
                 data: JSON.stringify({ FirstName: nameInput.value }),
@@ -1198,7 +1210,7 @@
                 url: 'https://localhost:44367/api/customers/' + CustomerId + '/assignsaleperson',
                 type: 'PUT',
                 contentType: 'application/json',
-                data: JSON.stringify({ Salesman : salepersonInput.value }),
+                data: JSON.stringify({ Salesman: salepersonInput.value }),
                 success: function (response) {
                     console.log('Name assigned successfully:', response);
                     $('#model-popup-one').modal('hide');
