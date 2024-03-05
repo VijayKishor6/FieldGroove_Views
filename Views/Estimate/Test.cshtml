@@ -62,6 +62,9 @@
             font-size: 12px;
         }
 
+        .newTaskModelReminder{
+             display: inline-block;
+        }
     </style>
 
 
@@ -596,14 +599,14 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-column">
                                                         <span> Assigned office location</span>
-                                                        <span id="officeLoactionValue">NewYork</span>
+                                                        <span id="officeLoactionValue"></span>
                                                     </div>
-                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-eleven">
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#EditEstimateLocation">
                                                         <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="model-popup-eleven" tabindex="-1" aria-labelledby="model-popup-eleven-label" aria-hidden="true">
+                                                    <div class="modal fade" id="EditEstimateLocation" tabindex="-1" aria-labelledby="Edit_Estimate_Location" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-body">
@@ -611,14 +614,14 @@
 
                                                                     <!-- Custom Styling for Dropdown -->
                                                                     <div class="dropdown mt-2">
-                                                                        <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
-                                                                            Select an option
+                                                                        <button class="btn btn-white dropdown-toggle" type="button" id="SelectLocationButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
+                                                                            Select Location
                                                                         </button>
                                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                                                                            <a class="dropdown-item" href="#">Option 1</a>
-                                                                            <a class="dropdown-item" href="#">Option 2</a>
-                                                                            <a class="dropdown-item" href="#">Option 3</a>
+                                                                            <a class="dropdown-item" href="#">New York</a>
+                                                                            <a class="dropdown-item" href="#">Chester, England</a>
+                                                                            <a class="dropdown-item" href="#">cardiff, Wales</a>
                                                                             <!-- Add more options as needed -->
                                                                         </div>
                                                                     </div>
@@ -632,13 +635,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
-
-
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
-
                                         </div>
                                         <div>
                                             <div class="px-3 font-size-span">
@@ -702,28 +701,44 @@
                                                         <span> Work OrderNote</span>
                                                         <span>NewYork</span>
                                                     </div>
-                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-thirteen">
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#WorkOrderNotes">
                                                         <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="model-popup-thirteen" tabindex="-1" aria-labelledby="model-popup-thirteen-label" aria-hidden="true">
+                                                    <div class="modal fade" id="WorkOrderNotes" tabindex="-1" aria-labelledby="model-popup-twelve-label" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
-                                                                <!-- Modal Header -->
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="model-popup-thirteen-label">Your Modal Title</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <!-- Modal Body -->
+
+
                                                                 <div class="modal-body">
-                                                                    <!-- Your modal content goes here -->
-                                                                    <p>This is your modal content.</p>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <th>Summary</th>
+                                                                            <th class="ps-2">
+                                                                                <textarea cols="20" rows="6" class=" bg-light">
+
+                                                                                </textarea>
+
+                                                                            </th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>Public Notes</th>
+                                                                            <th class="ps-2">
+                                                                                <textarea cols="20" rows="6" class=" bg-light">
+
+                                                                                </textarea>
+
+                                                                            </th>
+                                                                        </tr>
+
+                                                                    </table>
                                                                 </div>
                                                                 <!-- Modal Footer -->
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                    <!-- Add additional buttons if needed -->
+                                                                    <button type="button" class="btn btn-outline-info">Save</button>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -737,36 +752,45 @@
                                         <div>
                                             <div class="px-3 font-size-span">
                                                 <div class="d-flex justify-content-between">
-                                                    <div class="d-flex flex-column">
-                                                        <span> onfidence Level</span>
-                                                        <span>NewYork</span>
+                                                    <div class="d-flex flex-column mt-2">
+                                                        <span> Confidence Level</span>
                                                     </div>
-                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-fourteen">
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#ConfidenceLevel">
                                                         <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="model-popup-fourteen" tabindex="-1" aria-labelledby="model-popup-fourteen-label" aria-hidden="true">
+                                                    <div class="modal fade" id="ConfidenceLevel" tabindex="-1" aria-labelledby="Edit_Estimate_Location" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
-                                                                <!-- Modal Header -->
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="model-popup-fourteen-label">Your Modal Title</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <!-- Modal Body -->
                                                                 <div class="modal-body">
-                                                                    <!-- Your modal content goes here -->
-                                                                    <p>This is your modal content.</p>
+                                                                    <label for="setOfficeLoactionValue">Set Location:</label>
+
+                                                                    <!-- Custom Styling for Dropdown -->
+                                                                    <div class="dropdown mt-2">
+                                                                        <!-- Add "d-flex justify-content-between" to create a flex container with space-between alignment -->
+                                                                        <button class="btn btn-white dropdown-toggle border" type="button" id="ConfidenceLevelButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
+                                                                            Confidence Level
+                                                                        </button>
+                                                                        <div class="dropdown-menu" aria-labelledby="ConfidenceLevelMenu">
+                                                                            <a class="dropdown-item" href="#">Confident</a>
+                                                                            <a class="dropdown-item" href="#">Long Shot</a>
+                                                                            <a class="dropdown-item" href="#">Medium</a>
+                                                                            <!-- Add more options as needed -->
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
+
                                                                 <!-- Modal Footer -->
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                    <!-- Add additional buttons if needed -->
+                                                                    <button type="button" class="btn btn-outline-info">Save</button>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                   
 
                                                 </div>
                                             </div>
@@ -778,35 +802,60 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-column">
                                                         <span> Action Needed</span>
-                                                        <span>NewYork</span>
                                                     </div>
-                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-fifteen">
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#ActionNeeded">
                                                         <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="model-popup-fifteen" tabindex="-1" aria-labelledby="model-popup-fifteen-label" aria-hidden="true">
-                                                        <div class="modal-dialog">
+                                                    <div class="modal model-md" id="ActionNeeded" tabindex="-1" role="dialog">
+                                                        <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
-                                                                <!-- Modal Header -->
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="model-popup-fifteen-label">Your Modal Title</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    <h5 class="modal-title">Assigne Action</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    </button>
                                                                 </div>
-                                                                <!-- Modal Body -->
-                                                                <div class="modal-body">
-                                                                    <!-- Your modal content goes here -->
-                                                                    <p>This is your modal content.</p>
+                                                                <div class="modal-body">    
+                                                                    <form id="Assigne_Action_Form">
+                                                                        <table class="table table-bordered">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>Action</td>
+                                                                                    <td >
+                                                                                        <select class="form-select px-5" id="ActionDropdown" name="Customer2">
+                                                                                        </select>
+                                                                                    </td>
+                                                                                    <td><input type="date"  /></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Notes</td>
+                                                                                    <td colspan="2"><textarea class="form-control" id="AssigneActionNotes" name="AssigneActionNotes" ></textarea></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Assigne</td>
+                                                                                    <td colspan="2">
+                                                                                        <select class="form-select px-5" id="ActionAssigne" name="ActionAssigne">
+                                                                                        </select>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="text-left" colspan="3">
+                                                                                        <input type="checkbox" id="NotifyViaEmail" name="NotifyViaEmail">
+                                                                                        <span class="py-2">&nbsp;Notify via Email</span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </form>
                                                                 </div>
-                                                                <!-- Modal Footer -->
-                                                                <div class="modal-footer">
+                                                                <div class="modal-footer bg-light">
                                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                    <!-- Add additional buttons if needed -->
+                                                                    <button type="button" class="btn btn-primary">Save</button>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             </div>
                                             <hr class="m-0" />
@@ -817,30 +866,67 @@
                                                 <div class="d-flex justify-content-between">
                                                     <div class="d-flex flex-column">
                                                         <span>Open Task </span>
-                                                        <span>NewYork</span>
+                                                        <span></span>
                                                     </div>
-                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#model-popup-sixteen">
+                                                    <div data-bs-toggle="modal" class="mt-2" data-bs-target="#OpenTaskModel">
                                                         <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="model-popup-sixteen" tabindex="-1" aria-labelledby="model-popup-sixteen-label" aria-hidden="true">
-                                                        <div class="modal-dialog">
+                                                    <div class="modal model-md" id="OpenTaskModel" tabindex="-1" role="dialog">
+                                                        <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
-                                                                <!-- Modal Header -->
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="model-popup-sixteen-label">Your Modal Title</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    <h5 class="modal-title">Add New Task</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    </button>
                                                                 </div>
-                                                                <!-- Modal Body -->
                                                                 <div class="modal-body">
-                                                                    <!-- Your modal content goes here -->
-                                                                    <p>This is your modal content.</p>
+                                                                    <form id="AddNewTaskForm">
+                                                                        <table class="table table-bordered">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>Task</td>
+                                                                                    <td><input type="text" class="form-control" id="Task" name="Task" required></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Discription</td>
+                                                                                    <td colspan="2"><textarea class="form-control" id="TaskNotes" name="TaskNotes"></textarea></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Assignee</td>
+                                                                                    <td>
+                                                                                        <select class="form-select px-5" id="AssigneeDropdown" name="AssigneeDropdown">
+                                                                                        </select>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                
+                                                                                <tr>
+                                                                                    <td>Due Date</td>
+                                                                                    <td><input type="date" class="form-control" id="DueDate" name="DueDate" required></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>Reminder</td>
+                                                                                    <td class="text-left" >
+                                                                                        <div>
+                                                                                        <input type="checkbox" id="NotifyViaEmail" name="NotifyViaEmail">
+                                                                                        <span class="py-2">&nbsp;Notify via Email</span>
+                                                                                        </div>
+                                                                                        <div class="newTaskModelReminder">
+                                                                                            Remind user <select class="form-select px-5" id="AssigneeDropdown" name="AssigneeDropdown"></select>
+                                                                                            dut date and every
+                                                                                            <select class="form-select px-5" id="AssigneeDropdown" name="AssigneeDropdown"></select>
+                                                                                            hours after due date
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </form>
                                                                 </div>
-                                                                <!-- Modal Footer -->
-                                                                <div class="modal-footer">
+                                                                <div class="modal-footer bg-light">
                                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                    <!-- Add additional buttons if needed -->
+                                                                    <button type="button" class="btn btn-primary">Save</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -966,33 +1052,25 @@
                                                     <tr>
                                                         <th scope="row"> <label for="name">Name:</label></th>
                                                         <td>   <input type="text" id="estimateName" name="Name" value="value002" class="form-control" required></td>
-
-
                                                     </tr>
                                                     <tr>
                                                         <th scope="row"> <label for="type">Type:</label></th>
                                                         <td>  <input type="text" id="type" name="Type" value="value" class="form-control" required></td>
-
-
                                                     </tr>
                                                     <tr>
                                                         <th scope="row"> <label for="notes">Notes:</label></th>
                                                         <td colspan="2">  <input type="text" id="notes" name="Notes" value="value" class="form-control" required></td>
-
-                                                    </tr>
+                                                                                                            </tr>
                                                     <tr>
                                                         <th scope="row">  <label for="depositAmount">Deposit:</label></th>
                                                         <td colspan="2">
                                                             <input type="number" id="depositAmount" name="DepositAmount" value="123.45" class="form-control"
                                                                    required>
                                                         </td>
-
-                                                    </tr>
+                                                                                                            </tr>
                                                     <tr>
                                                         <th scope="row"> <label for="options">Option:</label></th>
                                                         <td colspan="2">
-
-
                                                             <div class="form-group">
                                                                 <label for="hidePhaseTotal" style="padding-right: 27px;">HidePhaseTotal:</label>
                                                                 <input type="checkbox" id="hidePhaseTotal" name="HidePhaseTotal" checked class="form-check-input">
@@ -1078,12 +1156,6 @@
             });
         }
 
-
-
-
-
-
-
         fetchCustomerData(CustomerId);
         function fetchCustomerData(customerId) {
             $.ajax({
@@ -1125,10 +1197,7 @@
             });
         });
 
-
-
         //post the estimate
-
         document.getElementById('postDataForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -1154,7 +1223,7 @@
             fetch('https://localhost:44367/api/Estimates', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',f
                 },
                 body: JSON.stringify(formData),
             })
@@ -1220,6 +1289,39 @@
                 }
             });
         });
-    </script>
 
+
+        $("#EditEstimateLocation .modal-footer .btn-outline-info").click(function () {
+            var selectedOption = $("#SelectLocationButton").attr("data-selected");
+
+            if (selectedOption && selectedOption !== "Select Location") {
+                const putData = {
+                    Estimate_Location: selectedOption
+                };
+
+                $.ajax({
+                    url: `https://localhost:44367/api/Estimates/editEstimateLocation/${EstimateId}`,
+                    type: 'PUT',
+                    contentType: 'application/json',
+                    data: JSON.stringify(putData),
+                    success: function (response) {
+                        console.log('Location updated successfully:', response);
+                        $('#officeLoactionValue').text(selectedOption);
+                      //  $('#EditEstimateLocation').modal('hide');
+                    },
+                    error: function (error) {
+                        console.error('Error updating location:', error);
+                    }
+                });
+            } else {
+                console.warn('Please select a valid option before saving.');
+            }
+        });
+
+        $("#EditEstimateLocation .dropdown-menu a").click(function () {
+            $("#SelectLocationButton").text($(this).text());
+            $("#SelectLocationButton").attr("data-selected", $(this).text());
+        });
+
+    </script>
 </html>
