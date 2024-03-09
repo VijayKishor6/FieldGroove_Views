@@ -13,5 +13,13 @@ namespace FieldGroove_Views.Controllers
         {
             return View();
         }
+        public IActionResult Task()
+        {
+            return View();
+        }
+        public IActionResult CustomerManagement()
+        {
+            return View();
+        }
 	}
 }
