@@ -1,49 +1,49 @@
 ﻿<!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='utf-8' />  
+    <meta charset='utf-8' />
     <style>
-        .butmod{
+        .butmod {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-      
-
     </style>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
 </head>
 <body>
     <div class="row p-0 m-0">
         <div class="col-9 border">
-            <div class="row p-3">               
-                    <div class="row p-2 py-0 m-0 border">
-                        <div class="col-6 d-flex p-0 m-0">
-                            <div class="p-1 flex-grow-1">
+            <div class="row p-3">
+                <div class="row p-2 py-0 m-0 border">
+                    <div class="col-6 d-flex p-0 m-0">
+                        <div class="p-1 flex-grow-1">
                             <input type="search" class="form-control" />
                         </div>
                         <div class="vr  p-0 m-0 h-100 mx-1"></div>
-                        </div>
+                    </div>
                     <div class="col-4 d-flex p-0 m-0">
                         <div class="p-1 flex-grow-1">
                             <div class="dropdown">
-                                <button class="btn btn-transparent border dropdown-toggle w-100 butmod" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-transparent border dropdown-toggle w-100 butmod" type="button" data-bs-toggle="" aria-expanded="false">
                                     Select a User
                                 </button>
                                 <ul class="dropdown-menu w-100">
-                                    <li><input type="search" class="w-100"/></li>
+                                    <li><input type="search" class="w-100" /></li>
                                     <li><a class="dropdown-item" href="#">Select a User</a></li>
                                     <li><a class="dropdown-item" href="#">Depigaa Madhan</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="vr  p-0 m-0 h-100 mx-1"></div>
-                        </div>
-                        <div class="col-2 p-1 m-0">
-                            <button class="btn btn-info w-100">Filter</button>
-                        </div>
                     </div>
+                    <div class="col-2 p-1 m-0">
+                        <button class="btn btn-info w-100">Filter</button>
+                    </div>
+                </div>
             </div>
-            <hr class="p-0 m-0"/>
+            <hr class="p-0 m-0" />
             <div class="row p-3">
                 <div class="d-flex justify-content-between">
                     <div>
@@ -54,20 +54,17 @@
                     </div>
                 </div>
             </div>
-            <hr class="px-0 mx-0"/>
+            <hr class="px-0 mx-0" />
             <div class="row">
-                <table id="leadsTable" class="table table-bordered border">
+                <table id="leadsTable" class="table table-hover table-sm">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Project Name</th>
-                            <th>Status</th>
-                            <th>Date Created</th>
-                            <th>Contact</th>
+                            <th>Task</th>
+                            <th>Description</th>
+                            <th>User</th>
+                            <th>Link</th>
+                            <th>Due Date</th>
                             <th>Action</th>
-                            <th>Assignee</th>
-                            <th>Bid Date</th>
-                            <th>operations</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -75,18 +72,75 @@
                 </table>
             </div>
             <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog" style="max-width:fit-content">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <!-- Add your form or content for adding a task here -->
+                            <form id="addTaskForm">
+                                <table class="table table-bordered">
+                                    <thbody>
+                                        <tr>
+                                            <td>Task</td>
+                                            <td><input type="text" class="form-control" id="taskInput" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Description</td>
+                                            <td><input type="text" class="form-control" id="descriptionInput" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Assignee</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn border btn-transparent dropdown-toggle form-control" type="button" data-bs-toggle="dropdown" id="userselector" aria-expanded="false">
+                                                        Select a User
+                                                    </button>
+                                                    <ul class="dropdown-menu user-dropdown" id="assigneeDropdown">
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Due Date</td>
+                                            <td><input type="date" class="form-control" id="dueDateInput" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reminder</td>
+                                            <td>
+                                                <input type="checkbox" id="sendEmailReminderCheckbox" />Send Email Remainder
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <p class="text-nowrap">Remind user</p>
+                                                    <div class="dropdown">
+                                                        <button class="btn border btn-transparent dropdown-toggle" type="button" data-bs-toggle="" aria-expanded="false">
+                                                            Day of
+                                                        </button>
+                                                        <ul class="dropdown-menu" id="dayOfDropdownMenu">
+                                                            <li><a class="dropdown-item" href="#">24hrs</a></li>
+                                                            <li><a class="dropdown-item" href="#">48hrs</a></li>
+                                                            <li><a class="dropdown-item" href="#">64hrs</a></li>
+                                                        </ul>
+                                                    </div><p class="text-nowrap">due date and every</p> <div class="dropdown">
+                                                        <button class="btn border btn-transparent dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dayOfDropdownButtonAfter">
+                                                            24
+                                                        </button>
+                                                        <ul class="dropdown-menu" id="dayOfDropdownMenuAfter">
+                                                            <li><a class="dropdown-item" data-value="24">24</a></li>
+                                                            <li><a class="dropdown-item" data-value="48">48</a></li>
+                                                            <li><a class="dropdown-item" data-value="64">64</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>hours after due date
+                                            </td>
+                                        </tr>
+                                    </thbody>
+                                </table>
+                            </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <!-- Add your submit button or other actions here -->
+                            <button type="button" class="btn btn-primary save-task-btn">Save</button>
                         </div>
                     </div>
                 </div>
@@ -95,35 +149,42 @@
 
         </div>
         <div class="col-3">
-
         </div>
 
     </div>
 
 </body>
+
 <script>
     $(document).ready(function () {
         var dataTable = $('#leadsTable').DataTable({
             columns: [
-                { data: 'CompanyName', defaultContent: '-' },
-                { data: 'ProjectName', defaultContent: '-' },
-                { data: 'Status', defaultContent: '-' },
-                { data: 'DateCreated', defaultContent: '-' },
-                { data: 'Phone', defaultContent: '-' },
-                { data: 'Action', defaultContent: '-' },
-                { data: 'Assignee', defaultContent: '-' },
-                { data: 'BidDate', defaultContent: '-' },
+                { data: 'ToDo', defaultContent: '-' },
+                { data: 'Description', defaultContent: '-' },
+                { data: 'Username', defaultContent: '-' },
+                { data: '   ', defaultContent: '-' },
+                { data: 'DueDate', defaultContent: '-' },
                 {
                     data: null,
                     render: function (data, type, row) {
-                        return '<button class="btn" data-bs-toggle="modal" data-bs-target="#editLeadModal" data-id="' + row.Id + '"><i class="bi bi-download"></i></button>';
+                        return '<button class="btn d-flex ms-auto delete-btn" data-bs-toggle="modal" data-bs-target="#editLeadModal" data-id="' + row.Id + '"><i class="bi bi-x-circle text-danger fw-bolder"></i></button>';
                     }
                 }
+
             ]
+        });
+        $(document).on('click', '.save-task-btn', function () {
+            saveTask();
+        });
+
+        $('#addTaskModal').on('show.bs.modal', function () {
+            resetDropdown();
+            resetDateInput();
+            resetTextInput();
         });
         function loadAllData() {
             $.ajax({
-                url: 'https://localhost:44367/api/Opportunities/opp', 
+                url: 'https://localhost:44367/api/ToDos/GetToDoDetails',
                 method: 'GET',
                 dataType: 'json',
                 success: function (data) {
@@ -135,14 +196,130 @@
                 }
             });
         }
+
+        function loadUsers() {
+            $.ajax({
+                url: 'https://localhost:44367/api/User',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var dropdown = $('.dropdown-menu.user-dropdown');
+                    dropdown.empty();
+                    $.each(data, function (index, user) {
+                        dropdown.append('<li><a class="dropdown-item" data-username="' + user.Username + '" href="#">' + user.Username + '</a></li>');
+                    });
+                },
+                error: function (error) {
+                    console.error('Error fetching user data:', error);
+                }
+            });
+        }
+
+
+        function resetDropdown() {
+            $('.dropdown-menu.user-dropdown a').removeClass('active');
+            $('.dropdown button[id="userselector"]').text('Select a User');
+            $('.dropdown button[id="dayOfDropdownButtonAfter"]').text('24');
+        }
+        function resetDateInput() {
+            $('#dueDateInput').val('');
+        }
+     
+
+        $(document).on('click', '#dayOfDropdownMenu a', function () {
+            $('#dayOfDropdownMenu a').removeClass('active');
+            $(this).addClass('active');
+            var selectedValue = $(this).text();
+            $('#dayOfDropdownButton').text(selectedValue);
+            console.log(selectedValue);
+        });
+
+        $(document).on('click', '#dayOfDropdownMenuAfter a', function (e) {
+            e.preventDefault();
+            var selectedDayAfter = $(this).data('value');
+            $('#dayOfDropdownButtonAfter').text(selectedDayAfter).data('selectedValue', parseInt(selectedDayAfter));
+            console.log("Selected Remainder Frequency:", selectedDayAfter);
+
+        });
+
+        function resetTextInput() {
+            $('#taskInput').val('');
+            $('#descriptionInput').val('');
+        }
+        $(document).on('click', '.dropdown-menu.user-dropdown a', function () {
+            $('.dropdown-menu.user-dropdown a').removeClass('active');
+            $(this).addClass('active');
+            var selectedUsername = $(this).data('username');
+            $('.dropdown button[id="userselector"]').text(selectedUsername);
+        });
+
+        $(document).on('click', '.delete-btn', function () {
+            var todoId = $(this).data('Id');
+            deleteToDo(todoId);
+            console.log("Delete Id:", todoId); 
+        });
+        function deleteToDo(Id) {
+            $.ajax({
+                url: 'https://localhost:44367/api/ToDos/' + Id,
+                method: 'DELETE',
+                success: function () {
+                    console.log('ToDo deleted successfully.');
+                    loadAllData();
+                },
+                error: function (error) {
+                    console.error('Error deleting ToDo:', error);
+                }
+            });
+        }
+        function saveTask() {
+            var task = $('#taskInput').val();
+            var description = $('#descriptionInput').val();
+            var dueDate = $('#dueDateInput').val();
+            var sendEmailReminder = $('#sendEmailReminderCheckbox').prop('checked');
+            var selectedUser = $('.dropdown-menu.user-dropdown a.active').data('username');
+            var selectedDayAfter =parseInt($('#dayOfDropdownButtonAfter').data('selectedValue'));
+            console.log("Selected Remainder Frequency:", selectedDayAfter);
+
+            $.ajax({
+                url: 'https://localhost:44367/api/ToDos/TodoWithUser',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    Username: selectedUser,
+                    ToDo: task,
+                    Description: description,
+                    DueDate: dueDate,
+                    SendEmailReminder: sendEmailReminder,
+                    ReminderFrequency: selectedDayAfter
+                }),
+                success: function (data) {
+                    console.log('Task added successfully:', data);
+                    $('#addTaskModal').modal('hide');
+                    loadAllData();
+                },
+                error: function (error) {
+                    console.error('Error saving task:', error);
+                }
+            });
+            resetDropdown();
+            resetDateInput();
+            resetTextInput();
+        }
+
+        $(document).on('click', '.btn-primary', function () {
+            saveTask();
+        });
+
+        loadUsers();
+
         $('.btn-success').on('click', function () {
-            // Show the modal when the button is clicked
             $('#addTaskModal').modal('show');
         });
         loadAllData();
         $('input[type="search"]').on('keyup', function () {
             dataTable.search($(this).val()).draw();
         });
+       
     });
 </script>
 </html>
