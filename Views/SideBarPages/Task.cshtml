@@ -208,6 +208,8 @@
                     $.each(data, function (index, user) {
                         dropdown.append('<li><a class="dropdown-item" data-username="' + user.Username + '" href="#">' + user.Username + '</a></li>');
                     });
+                    console.log(data);
+
                 },
                 error: function (error) {
                     console.error('Error fetching user data:', error);
@@ -254,13 +256,13 @@
         });
 
         $(document).on('click', '.delete-btn', function () {
-            var todoId = $(this).data('Id');
+            var todoId = $(this).data('id');
             deleteToDo(todoId);
-            console.log("Delete Id:", todoId); 
+            console.log("Delete Id:", todoId);  
         });
-        function deleteToDo(Id) {
+        function deleteToDo(id) {
             $.ajax({
-                url: 'https://localhost:44367/api/ToDos/' + Id,
+                url: 'https://localhost:44367/api/ToDos/' + id,
                 method: 'DELETE',
                 success: function () {
                     console.log('ToDo deleted successfully.');
