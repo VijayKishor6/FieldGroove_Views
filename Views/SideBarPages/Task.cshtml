@@ -97,7 +97,7 @@
                                                     <button class="btn border btn-transparent dropdown-toggle form-control" type="button" data-bs-toggle="dropdown" id="userselector" aria-expanded="false">
                                                         Select a User
                                                     </button>
-                                                    <ul class="dropdown-menu user-dropdown" id="assigneeDropdown">
+                                                    <ul class="dropdown-menu user-dropdown form-control" id="assigneeDropdown">
                                                     </ul>
                                                 </div>
                                             </td>
@@ -110,8 +110,8 @@
                                             <td>Reminder</td>
                                             <td>
                                                 <input type="checkbox" id="sendEmailReminderCheckbox" />Send Email Remainder
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <p class="text-nowrap">Remind user</p>
+                                                <div class="reminder-details d-none d-flex align-items-center gap-2">
+                                                    <p class="text-nowrap ">Remind user</p>
                                                     <div class="dropdown">
                                                         <button class="btn border btn-transparent dropdown-toggle" type="button" data-bs-toggle="" aria-expanded="false">
                                                             Day of
@@ -131,7 +131,7 @@
                                                             <li><a class="dropdown-item" data-value="64">64</a></li>
                                                         </ul>
                                                     </div>
-                                                </div>hours after due date
+                                                </div><div class="reminder-details d-none">hours after due date</div>
                                             </td>
                                         </tr>
                                     </thbody>
@@ -216,7 +216,9 @@
                 }
             });
         }
-
+        $('#sendEmailReminderCheckbox').on('change', function () {
+            $('.reminder-details').toggleClass('d-none', !$(this).is(':checked'));
+        });
 
         function resetDropdown() {
             $('.dropdown-menu.user-dropdown a').removeClass('active');
@@ -306,8 +308,15 @@
             resetDropdown();
             resetDateInput();
             resetTextInput();
+            resetCheckbox();
         }
-
+        $('#addTaskModal').on('hidden.bs.modal', function () {
+            resetCheckbox();
+        });
+        function resetCheckbox() {
+            $('#sendEmailReminderCheckbox').prop('checked', false);
+            $('.reminder-details').addClass('d-none');
+        }
         $(document).on('click', '.btn-primary', function () {
             saveTask();
         });
