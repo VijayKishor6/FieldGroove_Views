@@ -6,7 +6,7 @@
                 <div>
                     <div class="dropdown">
                         <button class="btn btn-transparent border-0 dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           Action
+                            Action
                         </button>
                         <ul class="dropdown-menu w-100">
                             <li><a class="dropdown-item" href="#">Select a User</a></li>
@@ -31,7 +31,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Payroll(Beta)</button>
-                </li>               
+                </li>
             </ul>
             <div class="tab-content p-2 border" id="myTabContent">
                 <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
@@ -55,15 +55,15 @@
                             <p>First Name</p>
                         </div>
                         <div class="col-10">
-                            <input type="text" class="form-control w-25" id="ProjectName">
-                            </div>
+                            <input type="text" class="form-control w-25" id="FirstName">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-2">
                             <p>Last Name</p>
                         </div>
                         <div class="col-10">
-                            <input type="text" class="form-control w-25" id="ProjectName">
+                            <input type="text" class="form-control w-25" id="LastName">
                         </div>
                     </div>
                     <div class="row">
@@ -71,7 +71,7 @@
                             <p>Email/User Name</p>
                         </div>
                         <div class="col-10">
-                            <input type="text" class="form-control w-25" id="ProjectName">
+                            <input type="text" class="form-control w-25" id="Email">
                         </div>
                     </div>
                     <div class="row">
@@ -79,7 +79,7 @@
                             <p>Password</p>
                         </div>
                         <div class="col-10">
-                            <input type="text" class="form-control w-25" id="ProjectName">
+                            <input type="text" class="form-control w-25" id="Password">
                         </div>
                     </div>
                     <div class="row">
@@ -87,7 +87,7 @@
                             <p>Phone</p>
                         </div>
                         <div class="col-10">
-                            <input type="text" class="form-control w-25" id="ProjectName">
+                            <input type="text" class="form-control w-25" id="Phone">
                         </div>
                     </div>
                     <div class="row">
@@ -124,7 +124,7 @@
                                         </td>
                                         <td>
                                             <input type="text" class="form-control" id="Footage(Sq Feet)" placeholder="0">
-                                        </td>                                        
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -190,51 +190,431 @@
                             <label class="text-nowrap">Task Event Style</label>
                         </div>
                         <div class="col">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" class="text-nowrap bg-body-secondary">Background Color</th>
-                                        <th scope="col" class="text-nowrap bg-body-secondary">Text Color</th>
-                                        <th scope="col" class="text-nowrap bg-body-secondary">Preview</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-transparent border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                   AliceBlue
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" data-value="New York(NY)"> New York(NY),</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-transparent border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    AliceBlue
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" data-value="New York(NY)"> New York(NY),</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <input type="text" class="form-control" id="Footage(Sq Feet)" placeholder="0">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <table class="table table-bordered" style="margin: 0">
+                                        <tr>
+                                            <th>Background Color</th>
+                                            <th>Text Color</th>
+                                            <th>Preview</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select class="input-block-level select2-me change-sample-event form-control" data-val="true" data-val-length="The field Task Event Background Color must be a string with a maximum length of 50." data-val-length-max="50" id="TaskEventBackgroundColor" name="TaskEventBackgroundColor">
+                                                    <option value="AliceBlue">AliceBlue</option>
+                                                    <option value="AntiqueWhite">AntiqueWhite</option>
+                                                    <option value="Aqua">Aqua</option>
+                                                    <option value="Aquamarine">Aquamarine</option>
+                                                    <option value="Azure">Azure</option>
+                                                    <option value="Beige">Beige</option>
+                                                    <option value="Bisque">Bisque</option>
+                                                    <option value="Black">Black</option>
+                                                    <option value="BlanchedAlmond">BlanchedAlmond</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="BlueViolet">BlueViolet</option>
+                                                    <option value="Brown">Brown</option>
+                                                    <option value="BurlyWood">BurlyWood</option>
+                                                    <option value="CadetBlue">CadetBlue</option>
+                                                    <option value="Chartreuse">Chartreuse</option>
+                                                    <option value="Chocolate">Chocolate</option>
+                                                    <option value="Coral">Coral</option>
+                                                    <option value="CornflowerBlue">CornflowerBlue</option>
+                                                    <option value="Cornsilk">Cornsilk</option>
+                                                    <option value="Crimson">Crimson</option>
+                                                    <option value="Cyan">Cyan</option>
+                                                    <option value="DarkBlue">DarkBlue</option>
+                                                    <option value="DarkCyan">DarkCyan</option>
+                                                    <option value="DarkGoldenRod">DarkGoldenRod</option>
+                                                    <option value="DarkGray">DarkGray</option>
+                                                    <option value="DarkGreen">DarkGreen</option>
+                                                    <option value="DarkKhaki">DarkKhaki</option>
+                                                    <option value="DarkMagenta">DarkMagenta</option>
+                                                    <option value="DarkOliveGreen">DarkOliveGreen</option>
+                                                    <option value="DarkOrange">DarkOrange</option>
+                                                    <option value="DarkOrchid">DarkOrchid</option>
+                                                    <option value="DarkRed">DarkRed</option>
+                                                    <option value="DarkSalmon">DarkSalmon</option>
+                                                    <option value="DarkSeaGreen">DarkSeaGreen</option>
+                                                    <option value="DarkSlateBlue">DarkSlateBlue</option>
+                                                    <option value="DarkSlateGray">DarkSlateGray</option>
+                                                    <option value="DarkTurquoise">DarkTurquoise</option>
+                                                    <option value="DarkViolet">DarkViolet</option>
+                                                    <option value="DeepPink">DeepPink</option>
+                                                    <option value="DeepSkyBlue">DeepSkyBlue</option>
+                                                    <option value="DimGray">DimGray</option>
+                                                    <option value="DodgerBlue">DodgerBlue</option>
+                                                    <option value="FireBrick">FireBrick</option>
+                                                    <option value="FloralWhite">FloralWhite</option>
+                                                    <option value="ForestGreen">ForestGreen</option>
+                                                    <option value="Fuchsia">Fuchsia</option>
+                                                    <option value="Gainsboro">Gainsboro</option>
+                                                    <option value="GhostWhite">GhostWhite</option>
+                                                    <option value="Gold">Gold</option>
+                                                    <option value="GoldenRod">GoldenRod</option>
+                                                    <option value="Gray">Gray</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="GreenYellow">GreenYellow</option>
+                                                    <option value="HoneyDew">HoneyDew</option>
+                                                    <option value="HotPink">HotPink</option>
+                                                    <option value="IndianRed">IndianRed</option>
+                                                    <option value="Indigo">Indigo</option>
+                                                    <option value="Ivory">Ivory</option>
+                                                    <option value="Khaki">Khaki</option>
+                                                    <option value="Lavender">Lavender</option>
+                                                    <option value="LavenderBlush">LavenderBlush</option>
+                                                    <option value="LawnGreen">LawnGreen</option>
+                                                    <option value="LemonChiffon">LemonChiffon</option>
+                                                    <option value="LightBlue">LightBlue</option>
+                                                    <option value="LightCoral">LightCoral</option>
+                                                    <option value="LightCyan">LightCyan</option>
+                                                    <option value="LightGoldenRodYellow">LightGoldenRodYellow</option>
+                                                    <option value="LightGray">LightGray</option>
+                                                    <option value="LightGreen">LightGreen</option>
+                                                    <option value="LightPink">LightPink</option>
+                                                    <option value="LightSalmon">LightSalmon</option>
+                                                    <option value="LightSeaGreen">LightSeaGreen</option>
+                                                    <option value="LightSkyBlue">LightSkyBlue</option>
+                                                    <option value="LightSlateGray">LightSlateGray</option>
+                                                    <option value="LightSteelBlue">LightSteelBlue</option>
+                                                    <option value="LightYellow">LightYellow</option>
+                                                    <option value="Lime">Lime</option>
+                                                    <option value="LimeGreen">LimeGreen</option>
+                                                    <option value="Linen">Linen</option>
+                                                    <option value="Magenta">Magenta</option>
+                                                    <option value="Maroon">Maroon</option>
+                                                    <option value="MediumAquaMarine">MediumAquaMarine</option>
+                                                    <option value="MediumBlue">MediumBlue</option>
+                                                    <option value="MediumOrchid">MediumOrchid</option>
+                                                    <option value="MediumPurple">MediumPurple</option>
+                                                    <option value="MediumSeaGreen">MediumSeaGreen</option>
+                                                    <option value="MediumSlateBlue">MediumSlateBlue</option>
+                                                    <option value="MediumSpringGreen">MediumSpringGreen</option>
+                                                    <option value="MediumTurquoise">MediumTurquoise</option>
+                                                    <option value="MediumVioletRed">MediumVioletRed</option>
+                                                    <option value="MidnightBlue">MidnightBlue</option>
+                                                    <option value="MintCream">MintCream</option>
+                                                    <option value="MistyRose">MistyRose</option>
+                                                    <option value="Moccasin">Moccasin</option>
+                                                    <option value="NavajoWhite">NavajoWhite</option>
+                                                    <option value="Navy">Navy</option>
+                                                    <option value="OldLace">OldLace</option>
+                                                    <option value="Olive">Olive</option>
+                                                    <option value="OliveDrab">OliveDrab</option>
+                                                    <option value="Orange">Orange</option>
+                                                    <option value="OrangeRed">OrangeRed</option>
+                                                    <option value="Orchid">Orchid</option>
+                                                    <option value="PaleGoldenRod">PaleGoldenRod</option>
+                                                    <option value="PaleGreen">PaleGreen</option>
+                                                    <option value="PaleTurquoise">PaleTurquoise</option>
+                                                    <option value="PaleVioletRed">PaleVioletRed</option>
+                                                    <option value="PapayaWhip">PapayaWhip</option>
+                                                    <option value="PeachPuff">PeachPuff</option>
+                                                    <option value="Peru">Peru</option>
+                                                    <option value="Pink">Pink</option>
+                                                    <option value="Plum">Plum</option>
+                                                    <option value="PowderBlue">PowderBlue</option>
+                                                    <option value="Purple">Purple</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="RosyBrown">RosyBrown</option>
+                                                    <option value="RoyalBlue">RoyalBlue</option>
+                                                    <option value="SaddleBrown">SaddleBrown</option>
+                                                    <option value="Salmon">Salmon</option>
+                                                    <option value="SandyBrown">SandyBrown</option>
+                                                    <option value="SeaGreen">SeaGreen</option>
+                                                    <option value="SeaShell">SeaShell</option>
+                                                    <option value="Sienna">Sienna</option>
+                                                    <option value="Silver">Silver</option>
+                                                    <option value="SkyBlue">SkyBlue</option>
+                                                    <option value="SlateBlue">SlateBlue</option>
+                                                    <option value="SlateGray">SlateGray</option>
+                                                    <option value="Snow">Snow</option>
+                                                    <option value="SpringGreen">SpringGreen</option>
+                                                    <option value="SteelBlue">SteelBlue</option>
+                                                    <option value="Tan">Tan</option>
+                                                    <option value="Teal">Teal</option>
+                                                    <option value="Thistle">Thistle</option>
+                                                    <option value="Tomato">Tomato</option>
+                                                    <option value="Turquoise">Turquoise</option>
+                                                    <option value="Violet">Violet</option>
+                                                    <option value="Wheat">Wheat</option>
+                                                    <option value="White">White</option>
+                                                    <option value="WhiteSmoke">WhiteSmoke</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                    <option value="YellowGreen">YellowGreen</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select class="input-block-level select2-me change-sample-event form-control" data-val="true" data-val-length="The field Task Event Text Color must be a string with a maximum length of 50." data-val-length-max="50" id="TaskEventTextColor" name="TaskEventTextColor">
+                                                    <option value="AliceBlue">AliceBlue</option>
+                                                    <option value="AntiqueWhite">AntiqueWhite</option>
+                                                    <option value="Aqua">Aqua</option>
+                                                    <option value="Aquamarine">Aquamarine</option>
+                                                    <option value="Azure">Azure</option>
+                                                    <option value="Beige">Beige</option>
+                                                    <option value="Bisque">Bisque</option>
+                                                    <option value="Black">Black</option>
+                                                    <option value="BlanchedAlmond">BlanchedAlmond</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="BlueViolet">BlueViolet</option>
+                                                    <option value="Brown">Brown</option>
+                                                    <option value="BurlyWood">BurlyWood</option>
+                                                    <option value="CadetBlue">CadetBlue</option>
+                                                    <option value="Chartreuse">Chartreuse</option>
+                                                    <option value="Chocolate">Chocolate</option>
+                                                    <option value="Coral">Coral</option>
+                                                    <option value="CornflowerBlue">CornflowerBlue</option>
+                                                    <option value="Cornsilk">Cornsilk</option>
+                                                    <option value="Crimson">Crimson</option>
+                                                    <option value="Cyan">Cyan</option>
+                                                    <option value="DarkBlue">DarkBlue</option>
+                                                    <option value="DarkCyan">DarkCyan</option>
+                                                    <option value="DarkGoldenRod">DarkGoldenRod</option>
+                                                    <option value="DarkGray">DarkGray</option>
+                                                    <option value="DarkGreen">DarkGreen</option>
+                                                    <option value="DarkKhaki">DarkKhaki</option>
+                                                    <option value="DarkMagenta">DarkMagenta</option>
+                                                    <option value="DarkOliveGreen">DarkOliveGreen</option>
+                                                    <option value="DarkOrange">DarkOrange</option>
+                                                    <option value="DarkOrchid">DarkOrchid</option>
+                                                    <option value="DarkRed">DarkRed</option>
+                                                    <option value="DarkSalmon">DarkSalmon</option>
+                                                    <option value="DarkSeaGreen">DarkSeaGreen</option>
+                                                    <option value="DarkSlateBlue">DarkSlateBlue</option>
+                                                    <option value="DarkSlateGray">DarkSlateGray</option>
+                                                    <option value="DarkTurquoise">DarkTurquoise</option>
+                                                    <option value="DarkViolet">DarkViolet</option>
+                                                    <option value="DeepPink">DeepPink</option>
+                                                    <option value="DeepSkyBlue">DeepSkyBlue</option>
+                                                    <option value="DimGray">DimGray</option>
+                                                    <option value="DodgerBlue">DodgerBlue</option>
+                                                    <option value="FireBrick">FireBrick</option>
+                                                    <option value="FloralWhite">FloralWhite</option>
+                                                    <option value="ForestGreen">ForestGreen</option>
+                                                    <option value="Fuchsia">Fuchsia</option>
+                                                    <option value="Gainsboro">Gainsboro</option>
+                                                    <option value="GhostWhite">GhostWhite</option>
+                                                    <option value="Gold">Gold</option>
+                                                    <option value="GoldenRod">GoldenRod</option>
+                                                    <option value="Gray">Gray</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="GreenYellow">GreenYellow</option>
+                                                    <option value="HoneyDew">HoneyDew</option>
+                                                    <option value="HotPink">HotPink</option>
+                                                    <option value="IndianRed">IndianRed</option>
+                                                    <option value="Indigo">Indigo</option>
+                                                    <option value="Ivory">Ivory</option>
+                                                    <option value="Khaki">Khaki</option>
+                                                    <option value="Lavender">Lavender</option>
+                                                    <option value="LavenderBlush">LavenderBlush</option>
+                                                    <option value="LawnGreen">LawnGreen</option>
+                                                    <option value="LemonChiffon">LemonChiffon</option>
+                                                    <option value="LightBlue">LightBlue</option>
+                                                    <option value="LightCoral">LightCoral</option>
+                                                    <option value="LightCyan">LightCyan</option>
+                                                    <option value="LightGoldenRodYellow">LightGoldenRodYellow</option>
+                                                    <option value="LightGray">LightGray</option>
+                                                    <option value="LightGreen">LightGreen</option>
+                                                    <option value="LightPink">LightPink</option>
+                                                    <option value="LightSalmon">LightSalmon</option>
+                                                    <option value="LightSeaGreen">LightSeaGreen</option>
+                                                    <option value="LightSkyBlue">LightSkyBlue</option>
+                                                    <option value="LightSlateGray">LightSlateGray</option>
+                                                    <option value="LightSteelBlue">LightSteelBlue</option>
+                                                    <option value="LightYellow">LightYellow</option>
+                                                    <option value="Lime">Lime</option>
+                                                    <option value="LimeGreen">LimeGreen</option>
+                                                    <option value="Linen">Linen</option>
+                                                    <option value="Magenta">Magenta</option>
+                                                    <option value="Maroon">Maroon</option>
+                                                    <option value="MediumAquaMarine">MediumAquaMarine</option>
+                                                    <option value="MediumBlue">MediumBlue</option>
+                                                    <option value="MediumOrchid">MediumOrchid</option>
+                                                    <option value="MediumPurple">MediumPurple</option>
+                                                    <option value="MediumSeaGreen">MediumSeaGreen</option>
+                                                    <option value="MediumSlateBlue">MediumSlateBlue</option>
+                                                    <option value="MediumSpringGreen">MediumSpringGreen</option>
+                                                    <option value="MediumTurquoise">MediumTurquoise</option>
+                                                    <option value="MediumVioletRed">MediumVioletRed</option>
+                                                    <option value="MidnightBlue">MidnightBlue</option>
+                                                    <option value="MintCream">MintCream</option>
+                                                    <option value="MistyRose">MistyRose</option>
+                                                    <option value="Moccasin">Moccasin</option>
+                                                    <option value="NavajoWhite">NavajoWhite</option>
+                                                    <option value="Navy">Navy</option>
+                                                    <option value="OldLace">OldLace</option>
+                                                    <option value="Olive">Olive</option>
+                                                    <option value="OliveDrab">OliveDrab</option>
+                                                    <option value="Orange">Orange</option>
+                                                    <option value="OrangeRed">OrangeRed</option>
+                                                    <option value="Orchid">Orchid</option>
+                                                    <option value="PaleGoldenRod">PaleGoldenRod</option>
+                                                    <option value="PaleGreen">PaleGreen</option>
+                                                    <option value="PaleTurquoise">PaleTurquoise</option>
+                                                    <option value="PaleVioletRed">PaleVioletRed</option>
+                                                    <option value="PapayaWhip">PapayaWhip</option>
+                                                    <option value="PeachPuff">PeachPuff</option>
+                                                    <option value="Peru">Peru</option>
+                                                    <option value="Pink">Pink</option>
+                                                    <option value="Plum">Plum</option>
+                                                    <option value="PowderBlue">PowderBlue</option>
+                                                    <option value="Purple">Purple</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="RosyBrown">RosyBrown</option>
+                                                    <option value="RoyalBlue">RoyalBlue</option>
+                                                    <option value="SaddleBrown">SaddleBrown</option>
+                                                    <option value="Salmon">Salmon</option>
+                                                    <option value="SandyBrown">SandyBrown</option>
+                                                    <option value="SeaGreen">SeaGreen</option>
+                                                    <option value="SeaShell">SeaShell</option>
+                                                    <option value="Sienna">Sienna</option>
+                                                    <option value="Silver">Silver</option>
+                                                    <option value="SkyBlue">SkyBlue</option>
+                                                    <option value="SlateBlue">SlateBlue</option>
+                                                    <option value="SlateGray">SlateGray</option>
+                                                    <option value="Snow">Snow</option>
+                                                    <option value="SpringGreen">SpringGreen</option>
+                                                    <option value="SteelBlue">SteelBlue</option>
+                                                    <option value="Tan">Tan</option>
+                                                    <option value="Teal">Teal</option>
+                                                    <option value="Thistle">Thistle</option>
+                                                    <option value="Tomato">Tomato</option>
+                                                    <option value="Turquoise">Turquoise</option>
+                                                    <option value="Violet">Violet</option>
+                                                    <option value="Wheat">Wheat</option>
+                                                    <option value="White">White</option>
+                                                    <option value="WhiteSmoke">WhiteSmoke</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                    <option value="YellowGreen">YellowGreen</option>
+                                                </select>
+
+                                            </td>
+                                            <td>
+                                                <div id="preview" class="sample-event" style="padding: 5px; border-radius: 3px;max-width: 128px;line-height: 15px; font-size: 10px;">
+                                                    {customer-name} - {opportunity name} ({work-order-type})
+                                                    <span style="border-top: 1px dashed rgba(255,255,255,0.25);display:block;font-size: 8px; font-weight:bold;padding: 3px 0 3px 0;margin-top: 5px;">
+                                                        {dollar} | {square feet}
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
+                    <div class="row mt-1">
+                        <div class="col-2">
+                            <label>Email Signature</label>
+                        </div>
+                        <div class="col">
+                            <textarea class="input-block-level summernote form-control w-100" cols="20" data-val="true" data-val-length="The field Email Signature must be a string with a maximum length of 500." data-val-length-max="500" id="EmailSignature" name="EmailSignature" placeholder="Enter custom email signature here..." rows="2" style="height: 80px;">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-2">
+                            <p>Hourly Rate</p>
+                        </div>
+                        <div class="col-10">
+                            <div class="input-group mb-3 w-25">
+                                <span class="input-group-text" id="basic-addon1">$</span>
+                                <input type="text" class="form-control w-25" placeholder="0" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Options</p>
+                        </div>
+                        <div class="col-10">
+                            <input type="checkbox">&nbsp;Active<br />
+                            <input type="checkbox">&nbsp;Restricted Access<br />
+                            <input type="checkbox">&nbsp;Enable Daily Task / Opportunity Notifications<br />
+                            <input type="checkbox">&nbsp;Enable Daily Jobs Notifications<br />
+                            <input type="checkbox">&nbsp;Truck Driver<br />
+                            <input type="checkbox">&nbsp;Show Work Area First (when adding line item to an estimate)<br />
+                            <input type="checkbox">&nbsp;Exclude From Reports<br />
+                            <input type="checkbox">&nbsp;Allow User to Change Unit Price on Estimate (For Limited Sales Only)<br />
+                            <input type="checkbox">&nbsp;Read Only Calendar<br />
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-2">
+                            <p>Available Work Locations</p>
+                        </div>
+                        <div class="col-10">
+                            <badge class="bg-body-secondary rounded">New York(NY),</badge>
+                        </div>
+                    </div>
+                    <div class="row border-bottom py-3 m-0">
+                        <label class="form-control bg-info ">
+                            Please remember each new regular user is an additional ₹ 120.00 per<br />
+                            month and field user is ₹ 0.00. Are you sure you want to create a<br />
+                            new user?
+                        </label>
+                        <div>
+                            <input type="checkbox">&nbsp;Yes, I would still like to add this user<br />
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class=" d-flex flex-row-reverse gap-2">
+                        <div>
+                            <button type="button" class="btn btn-secondary btn-sm">cancel</button>
+                        </div>
+                        <div>
+                                <button type="button" class="btn btn-primary btn-sm" id="saveButton">Save</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
                 </div>
-                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>                
             </div>
         </div>
+        </div>
+        <div class="col-4">
+        </div>
     </div>
-    <div class="col-4">
-            
-    </div>
-</div>
+    <script>
+        const backgroundColorSelect = document.getElementById('TaskEventBackgroundColor');
+        const textColorSelect = document.getElementById('TaskEventTextColor');
+        const preview = document.getElementById('preview');
+        function updatePreview() {
+            const backgroundColor = backgroundColorSelect.value;
+            const textColor = textColorSelect.value;
+            preview.style.backgroundColor = backgroundColor;
+            preview.style.color = textColor;
+        }
+        backgroundColorSelect.addEventListener('change', updatePreview);
+        textColorSelect.addEventListener('change', updatePreview);
+        updatePreview();
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#saveButton").click(function () {
+                const firstName = $("#FirstName").val();
+                const lastName = $("#LastName").val();
+                const email = $("#Email").val();
+                const password = $("#Password").val();
+                const phone = $("#Phone").val();
+                const data = {
+                    FirstName: firstName,
+                    LastName: lastName,
+                    Username: email,
+                    Password: password,
+                    Phone: phone
+                };
+                $.ajax({
+                    url: "https://localhost:44367/api/User",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
+                    success: function (response) {
+                        console.log("Success:", response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+        });
+    </script>
