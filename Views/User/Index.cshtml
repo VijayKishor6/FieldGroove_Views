@@ -1,0 +1,240 @@
+﻿<div class="row">
+    <div class="col-8 border-end">
+        <div class="row border-bottom  py-3 m-0">
+            <div class="d-flex justify-content-between">
+                <div><h3>User Create</h3></div>
+                <div>
+                    <div class="dropdown">
+                        <button class="btn btn-transparent border-0 dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Action
+                        </button>
+                        <ul class="dropdown-menu w-100">
+                            <li><a class="dropdown-item" href="#">Select a User</a></li>
+                            <li><a class="dropdown-item" href="#">Depigaa Madhan</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-bottom py-3 m-0">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Users</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create User</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row p-3">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">User Information</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Payroll(Beta)</button>
+                </li>               
+            </ul>
+            <div class="tab-content p-2 border" id="myTabContent">
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Default Location</p>
+                        </div>
+                        <div class="col-10">
+                            <div class="dropdown">
+                                <button class="btn btn-transparent border dropdown-toggle w-25" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    New York(NY),
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" data-value="New York(NY)"> New York(NY),</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>First Name</p>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" class="form-control w-25" id="ProjectName">
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Last Name</p>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" class="form-control w-25" id="ProjectName">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Email/User Name</p>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" class="form-control w-25" id="ProjectName">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Password</p>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" class="form-control w-25" id="ProjectName">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Phone</p>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" class="form-control w-25" id="ProjectName">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Default Crew</p>
+                        </div>
+                        <div class="col-10">
+                            <div class="dropdown">
+                                <button class="btn btn-transparent border dropdown-toggle w-25" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Select a Crew...
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" data-value="New York(NY)"> New York(NY),</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label class="text-nowrap">Capacity</label>
+                        </div>
+                        <div class="col">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Money($)</th>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Square Footage(Sq Feet)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" id="Money($)" placeholder="0">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="Footage(Sq Feet)" placeholder="0">
+                                        </td>                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label class="text-nowrap">Goals</label>
+                        </div>
+                        <div class="col">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Monthly Break Even($)</th>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Monthly Sales($)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" id="Money($)" placeholder="0">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="Footage(Sq Feet)" placeholder="0">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label class="text-nowrap">Comission Rates</label>
+                        </div>
+                        <div class="col">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Sales(%)</th>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Estimator(%)</th>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Project Management(%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" id="Money($)" placeholder="0">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="Footage(Sq Feet)" placeholder="0">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="Footage(Sq Feet)" placeholder="0">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <small><a href="#">Click here</a>to enable slidin scale comission rates</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label class="text-nowrap">Task Event Style</label>
+                        </div>
+                        <div class="col">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Background Color</th>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Text Color</th>
+                                        <th scope="col" class="text-nowrap bg-body-secondary">Preview</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-transparent border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                   AliceBlue
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" data-value="New York(NY)"> New York(NY),</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-transparent border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    AliceBlue
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" data-value="New York(NY)"> New York(NY),</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="Footage(Sq Feet)" placeholder="0">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>                
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+            
+    </div>
+</div>
