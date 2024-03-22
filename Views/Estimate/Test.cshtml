@@ -331,10 +331,8 @@
                                             </td>
                                             <td class="px-3">
                                                 <div class="d-flex justify-content-between">
-                                                    <a href="#">
-                                                        Test company
-
-                                                    </a>
+                                                    <div id="projectManagerName">
+                                                    </div>
                                                     <div data-bs-toggle="modal" data-bs-target="#model-popup-five">
                                                         <i class="bi bi-pencil-square" style="color:blue"></i>
                                                     </div>
@@ -346,6 +344,53 @@
                                                                 <!-- Modal Header -->
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="model-popup-five-label">Your Modal Title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <!-- Modal Body -->
+                                                                <div class="modal-body">
+                                                                    <div class="modal-body">
+                                                                        <label for="projectManager">Enter Project Manager:</label>
+                                                                        <input type="text" id="projectManager" class="form-control" placeholder="Enter the new name">
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Modal Footer -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                    <!-- Add additional buttons if needed -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        Company
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                            <td class="px-3">
+                                                <div class="d-flex justify-content-between">
+                                                    <a href="#">
+                                                        Test company
+
+                                                    </a>
+                                                    <div data-bs-toggle="modal" data-bs-target="#model-popup-five">
+                                                        <i class="bi bi-pencil-square" style="color:blue"></i>
+                                                    </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="model-popup-nighteen" tabindex="-1" aria-labelledby="model-popup-nighteen-label" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="model-popup-nighteen-label">Your Modal Title</h5>
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <!-- Modal Body -->
@@ -365,6 +410,7 @@
                                                 </div>
                                             </td>
                                         </tr>
+
 
                                         <tr>
                                             <td class="px-3">
@@ -1234,7 +1280,6 @@
                 .then(data => {
                     console.log('Successfully posted:', data);
 
-                    // Check if the server response contains EstimateId
                     if (data) {
                         EstimateId = data.Result
                         var testPageUrl = '/Estimate/Test?CustomerId=' + CustomerId + '&EstimateId=' + EstimateId;
@@ -1244,8 +1289,6 @@
                         console.log('EstimateId not found in the response:', data);
                     }
 
-
-                    // Close the modal if needed
                     document.getElementById('myModal').style.display = 'none';
                 })
                 .catch((error) => {
@@ -1257,7 +1300,8 @@
 
         });
 
-        $("#assignName").click(function () {
+        $("#assignName").click(function (event) {
+            event.preventDefault();
             var nameInput = document.getElementById("nameInput");
             $.ajax({
                 url: 'https://localhost:44367/api/customers/' + CustomerId + '/AssignName',
@@ -1267,13 +1311,16 @@
                 success: function (response) {
                     console.log('Name assigned successfully:', response);
                     $('#model-popup-one').modal('hide');
+                    location.reload();
+
                 },
                 error: function (error) {
                     console.error('Error assigning name:', error);
                 }
             });
         });
-        $("#assignSalePerson").click(function () {
+        $("#assignSalePerson").click(function (event) {
+            event.preventDefault();
             var salepersonInput = document.getElementById("salepersonInput");
             $.ajax({
                 url: 'https://localhost:44367/api/customers/' + CustomerId + '/assignsaleperson',
@@ -1283,6 +1330,7 @@
                 success: function (response) {
                     console.log('Name assigned successfully:', response);
                     $('#model-popup-three').modal('hide');
+                    location.reload();
                 },
                 error: function (error) {
                     console.error('Error assigning name:', error);
