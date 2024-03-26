@@ -25,5 +25,10 @@ namespace FieldGroove_Views.Controllers
         {
             return View();
         }
+
+        public IActionResult AddCustomer()
+        {
+            return View();
+        }
 	}
 }

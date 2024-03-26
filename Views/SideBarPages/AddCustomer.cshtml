@@ -1,0 +1,389 @@
+﻿<div class="row">
+    <div class="col-9">
+        <div class="d-flex justify-content-between p-3 border-bottom border-end">
+            <div>
+                <h3>New Customer</h3>
+            </div>
+            <div class="d-flex gap-1">
+                <button class="btn btn-secondary">Statement</button>
+                <button class="btn btn-primary">Apply Payment</button>
+                <button class="btn btn-success">Start New Opportunity</button>
+            </div>
+        </div>
+        <div class="border-bottom border-end py-2 px-3">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("CustomerManagement", "SideBarpages")">Customers</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">New Customers</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row m-0 p-3 border-end text-white ">
+            <div class="col-2 border bg-primary">
+                <small class="fst-italic">Amount Owned</small>
+                <h3>₹0.00</h3>
+            </div>
+            <div class="col-2 border bg-secondary">
+                <small class="fst-italic">YTD Revenue</small>
+                <h3>₹0.00</h3>
+            </div>
+            <div class="col-3 border bg-secondary">
+                <small class="fst-italic">Lifetime Owned</small>
+                <h3>₹0.00</h3>
+            </div>
+            <div class="col-5 border bg-secondary">
+                <small class="fst-italic">Unpaid Invoices</small>
+                <h3>0 Open Invoices</h3>
+            </div>
+        </div>
+        <div class="p-3 border-bottom border-end">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Customer Information</button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Contacts(0)</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Opportunities(0)</button>
+                    <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Customer Notes(Public)</button>
+                    <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-Tasks" type="button" role="tab" aria-controls="nav-Tasks" aria-selected="false">Tasks(0)</button>
+                    <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-Audit" type="button" role="tab" aria-controls="nav-Audit" aria-selected="false">Audit Log(0)</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active border border-top-0" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">House Account</div>
+                                <div class="col"><input type="checkbox" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col text-nowrap">Commercial Account</div>
+                                <div class="col"><input type="checkbox" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col text-nowrap">Same as Physical</div>
+                                <div class="col"><input type="checkbox" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Customer Type</div>
+                                <div class="col">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Active</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Physical Address 1</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="PhysicalAddress1" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Billing Address 1</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="BillingAddress1" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Account Type</div>
+                                <div class="col">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>30 Days</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Physical Address 2</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="PhysicalAddress2" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Billing Address 2</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="BillingAddress2" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">First Name</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="FirstName" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col text-nowrap">Physical City</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="PhysicalCity" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col text-nowrap">Billing City</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="BillingCity" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Last Name</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="LastName" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col text-nowrap">Physical State</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="PhysicalState" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col text-nowrap">Billing State</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="BillingState" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Phone</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="Phone" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col text-nowrap">Physical Zip</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="PhysicalZip" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col text-nowrap">Billing Zip</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="BillingZip" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Fax</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="Fax" /></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col text-nowrap">Physical Country</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="PhysicalCounty" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Mobile</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="Mobile" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Work Phone</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="PhoneWork" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Email</div>
+                                <div class="col"><input type="text" class="form-control rounded-0" id="Email" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col">Discount</div>
+                                <div class="col">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control rounded-0" placeholder="0" aria-describedby="basic-addon1" id="Discount">
+                                        <span class="input-group-text rounded-0" id="basic-addon1">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mx-3" />
+                    <div class="row p-3">
+                        <div class="row">
+                            <div class="col-2">Website</div>
+                            <div class="col-4"><input type="text" class="form-control rounded-0" id="Website" /></div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-2">Lead Source</div>
+                        <div class="col-4">
+                            <select class="form-select  rounded-0" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-2">Salesperson</div>
+                        <div class="col-4">
+                            <select class="form-select  rounded-0" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-2">Preferred Invoice Method</div>
+                        <div class="col-4">
+                            <select class="form-select  rounded-0" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-2">Options</div>
+                        <div class="col">
+                            <div><input type="checkbox" checked/>Active</div>
+                            <div><input type="checkbox" />Opt Out Of Event and Invoice Reminders(overrides contact sharing)</div>
+                            <div><input type="checkbox" />Opt Out Of Estimate Future Reminders</div>
+                            <div><input type="checkbox" />Do Not Quote </div>
+                            <div><input type="checkbox" />Pending Credit Approval</div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="row">
+                            <div class="col-2">Locations</div>
+                            <div class="col-4"><badge class="bg-success rounded">New York(NY),</badge></div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="row">
+                            <div class="col-2">Credit Balance</div>
+                            <div class="col">₹0.00 - this can be used when applying a payment to an invoice or by clicking <a href="#">here</a></div>
+                        </div>
+                    </div>
+                    <hr class="mx-3" />
+                    <div class="d-flex flex-row-reverse gap-1 p-3">
+                        <button class="btn btn-secondary">Cancel</button>
+                        <button class="btn btn-primary" id="saveButton">Save</button>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="tab-pane fade border border-top-0" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">Contacts</div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">Opportunities</div>
+                <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">Customer Notes</div>
+                <div class="tab-pane fade" id="nav-Tasks" role="tabpanel" aria-labelledby="nav-Tasks-tab" tabindex="0">Tasks</div>
+                <div class="tab-pane fade" id="nav-Audit" role="tabpanel" aria-labelledby="nav-Audit-tab" tabindex="0">Audit Log</div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <div class="col-3">
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#saveButton").click(function () {
+            const PhysicalAddress1 = $("#PhysicalAddress1").val();
+            const BillingAddress1 = $("#BillingAddress1").val();
+            const PhysicalAddress2 = $("#PhysicalAddress2").val();
+            const BillingAddress2 = $("#BillingAddress2").val();
+            const FirstName = $("#FirstName").val();
+            const PhysicalCity = $("#PhysicalCity").val();
+            const BillingCity = $("#BillingCity").val();
+            const LastName = $("#LastName").val();
+            const PhysicalState = $("#PhysicalState").val();
+            const BillingState = $("#BillingState").val();
+            const Phone = $("#Phone").val();
+            const PhysicalZip = $("#PhysicalZip").val();
+            const BillingZip = $("#BillingZip").val();
+            const Fax = $("#Fax").val();
+            const PhysicalCounty = $("#PhysicalCounty").val();
+            const Mobile = $("#Mobile").val();
+            const PhoneWork = $("#PhoneWork").val();
+            const Email = $("#Email").val();
+            const Discount = $("#Discount").val();
+            const Website = $("#Website").val();
+            const data = {
+                PhysicalAddress1: PhysicalAddress1,
+                BillingAddress1: BillingAddress1,
+                PhysicalAddress2: PhysicalAddress2,
+                BillingAddress2: BillingAddress2,
+                FirstName: FirstName,
+                PhysicalCity: PhysicalCity,
+                BillingCity: BillingCity,
+                LastName: LastName,x
+                PhysicalState: PhysicalState,
+                BillingState: BillingState,
+                Phone: Phone,
+                PhysicalZip: PhysicalZip,
+                BillingZip: BillingZip,
+                Fax: Fax,
+                PhysicalCounty: PhysicalCounty,
+                Mobile: Mobile,
+                PhoneWork: PhoneWork,
+                Email: Email,
+                Discount: Discount,
+                Website: Website,
+                EstimateId:1
+
+            };
+            $.ajax({
+                url: "https://localhost:44367/api/Customers",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    console.log("Success:", response);
+                    window.location.href = "/SideBarPages/CustomerManagement"
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                }
+            });
+        });        
+    });
+</script>

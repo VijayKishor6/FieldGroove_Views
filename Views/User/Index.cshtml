@@ -1,4 +1,9 @@
-﻿<div class="row">
+﻿<style>
+    .pleaserem{
+        background-color:aquamarine;
+    }
+</style>
+<div class="row">
     <div class="col-8 border-end">
         <div class="row border-bottom  py-3 m-0">
             <div class="d-flex justify-content-between">
@@ -19,7 +24,7 @@
         <div class="row border-bottom py-3 m-0">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Users</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Users", "SideBarpages")">Users</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Create User</li>
                 </ol>
             </nav>
@@ -507,7 +512,7 @@
                             <label>Email Signature</label>
                         </div>
                         <div class="col">
-                            <textarea class="input-block-level summernote form-control w-100" cols="20" data-val="true" data-val-length="The field Email Signature must be a string with a maximum length of 500." data-val-length-max="500" id="EmailSignature" name="EmailSignature" placeholder="Enter custom email signature here..." rows="2" style="height: 80px;">
+                            <textarea class="input-block-level summernote form-control w-100" cols="20" data-val="true" data-val-length="The field Email Signature must be a string with a maximum length of 500." data-val-length-max="500" id="summernote" name="EmailSignature" placeholder="Enter custom email signature here..." rows="2" style="height: 80px;">
                             </textarea>
                         </div>
                     </div>
@@ -547,7 +552,7 @@
                         </div>
                     </div>
                     <div class="row border-bottom py-3 m-0">
-                        <label class="form-control bg-info ">
+                        <label class="form-control pleaserem">
                             Please remember each new regular user is an additional ₹ 120.00 per<br />
                             month and field user is ₹ 0.00. Are you sure you want to create a<br />
                             new user?
@@ -601,7 +606,9 @@
                     LastName: lastName,
                     Username: email,
                     Password: password,
-                    Phone: phone
+                    Phone: phone,
+                AllowToEditUnitPrice:false,
+                ReadOnlyCalendar:false
                 };
                 $.ajax({
                     url: "https://localhost:44367/api/User",
@@ -610,11 +617,24 @@
                     data: JSON.stringify(data),
                     success: function (response) {
                         console.log("Success:", response);
+                    window.location.href = "/SideBarPages/Users"
                     },
                     error: function (xhr, status, error) {
                         console.error("Error:", error);
                     }
                 });
             });
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                toolbar: [
+                    //['style', ['style']],
+                    ['color', ['color']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['fontname', ['fontname']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link']],
+                ]
+            });
+        });
         });
     </script>
